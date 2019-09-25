@@ -1,15 +1,22 @@
 # Labs
-Lab exercises. Introduction to Information Technology. Networking.
+Lab exercises. Introduction to Information Technology. Networking. Based on Supplement Material to the book Computer Networking: A Top-Down Approach, 7th ed., J.F. Kurose and K.W. Ross
 
- One's understanding of network protocols can often be greatly deepened by "seeing protocols in action" and by "playing around with protocols" - observing the sequence of messages exchanges between two protocol entities, delving down into the details of protocol operation, and causing protocols to perform certain actions and then observing these actions and their consequences. This can be done in simulated scenarios or in a "real" network environment such as the Internet. The Java applets in the textbook Web site take the first approach. In these Wireshark labs, we'll take the latter approach. You'll be running various network applications in different scenarios using a computer on your desk, at home, or in a lab. You'll observe the network protocols in your computer "in action," interacting and exchanging messages with protocol entities executing elsewhere in the Internet. Thus, you and your computer will be an integral part of these "live" labs. You'll observe, and you'll learn, by doing.
+One's understanding of network protocols can often be greatly deepened by "seeing protocols in action" and by "playing around with protocols" - observing the sequence of messages exchanges between two protocol entities, delving down into the details of protocol operation, and causing protocols to perform certain actions and then observing these actions and their consequences. In these Wireshark labs, we will do it in a real network environment. 
 
-The basic tool for observing the messages exchanged between executing protocol entities is called a packet sniffer. As the name suggests, a packet sniffer passively copies ("sniffs") messages being sent from and received by your computer; it will also display the contents of the various protocol fields of these captured messages. For these labs, we'll use the Wireshark packet sniffer. Wireshark is a free/shareware packet sniffer (a follow-on to the earlier Ethereal packet sniffer) that runs on Windows, Linux/Unix, and Mac computers. The Wireshark labs below will allow you to explore many of the Internet most important protocols.
+You will create a Web page and verify what happens when you ask the Web client (your browser) to access it through the network. The objecive in this lab is you observe and learn by doing.
 
-Video: Intro to Wireshark and HTTP
+## Creating an HTML page
+HTML:  https://jsbin.com/?html,output
+
+
+
+
+
+## Wireshark
+The basic tool for observing the messages exchanged between executing protocol entities is called a **packet sniffer**. As the name suggests, a packet sniffer passively copies ("sniffs") messages being sent from and received by your computer; it will also display the contents of the various protocol fields of these captured messages. For these labs, we'll use the **Wireshark** packet sniffer. Wireshark is a free/shareware packet sniffer that runs on Windows, Linux/Unix, and Mac computers. This lab will allow us to explore the HTTP protocol.
+
+The next video gives an introduction on how to use the Wireshark
 https://www.youtube.com/watch?v=PYoXowOCppc
-
-HTML: 
-https://jsbin.com/?html,output
 
 Activity in parallel:
 http://gaia.cs.umass.edu/kurose_ross/interactive/http-get.php
@@ -19,7 +26,7 @@ http://gaia.cs.umass.edu/kurose_ross/interactive/DNS_HTTP_delay.php
 
 Wireshark Lab: Getting Started v7.0
 
-Supplement to Computer Networking: A Top-Down Approach, 7th ed., J.F. Kurose and K.W. Ross
+
 
 One’s understanding of network protocols can often be greatly deepened by “seeing protocols in action” and by “playing around with protocols” – observing the sequence of messages exchanged between two protocol entities, delving down into the details of protocol operation, and causing protocols to perform certain actions and then observing these actions and their consequences. This can be done in simulated scenarios or in a “real” network environment such as the Internet. In the Wireshark labs you’ll be doing in this course, you’ll be running various network applications in different scenarios using your own computer (or you can borrow a friends; let me know if you don’t have access to a computer where you can install/run Wireshark). You’ll observe the network protocols in your computer “in action,” interacting and exchanging messages with protocol entities executing elsewhere in the Internet.   Thus, you and your computer will be an integral part of these “live” labs.  You’ll observe, and you’ll learn, by doing.
 
