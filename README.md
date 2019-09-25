@@ -3,12 +3,16 @@ Lab exercises. Introduction to Information Technology. Networking. Based on Supp
 
 One's understanding of network protocols can often be greatly deepened by "seeing protocols in action" and by "playing around with protocols" - observing the sequence of messages exchanges between two protocol entities, delving down into the details of protocol operation, and causing protocols to perform certain actions and then observing these actions and their consequences. In these Wireshark labs, we will do it in a real network environment. 
 
-You will create a Web page and verify what happens when you ask the Web client (your browser) to access it through the network. The objecive in this lab is you observe and learn by doing.
+You will create a Web page and verify what happens when you ask the Web client (your browser) to access it through the network. The objective in this lab is that you observe and learn by doing.
 
-## Creating an HTML page
+The Web is a huge document database, linked by hypertexts. It is based on 3 technologies: 
+- the Hypertext Transfer Protocol (HTTP): the underlying protocol used by the World Wide Web that defines how messages are formatted and transmitted, and what actions Web servers and clients (browsers) should take in response to various commands. 
+- The Hypertext Markup Language (HTML). It is the markup language we use to write documents that can be displayed in a Web browser.  Web pages
+- A Uniform Resource Locator (URL) allows to refer to a Web page.
+
+## My first Web page.
+Creating an HTML page
 HTML:  https://jsbin.com/?html,output
-
-
 
 
 
