@@ -18,8 +18,22 @@ You can build and edit your HTML pages by either using online editors or editors
 Using online editors:
 JSBin is an online editor that you can use to create HTML Web pages available at  https://jsbin.com/?html,output
 
-You may open the file hello.hml available [here](../hello.html). The .html extension tells me this is a HTML file, and it will contain some HTML code. Let's look at this file in a browser by right clicking. The file is loaded from the disk and then it displays its contents.
-You can see that this is a simple file, it is just showing the text hello html. and it's also changed the title of
+This is a valid html file. You can copy it and save it with a .html extension and your browser will show its contents:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>My First HTML Page</title>
+</head>
+<body>
+    Hello Word!
+</body>
+</html>
+```
+The .html extension tells me this is a HTML file, and it will contain some HTML code. 
+You can see that this is a simple file, it is just showing the text hello html. and it also changes the title of
 the page to be my first HTML page. So there you have it, a very simple HTML page.
 Let's now go to an online tool(https://jsbin.com/) and try to create this page from scratch.
 
@@ -49,19 +63,7 @@ And as you can see, output is now appearing because we have some content in our 
 And I can do a lot more here if I want to,
 but for now that's just showing you that this page has created the same output as our original page "Hello HTML!",
 and the page title we've said is my first HTML page, and that's the amount of code it takes to construct that page.
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>My First HTML Page</title>
-</head>
-<body>
-    Hello Word!
-</body>
-</html>
-```
+
 'Tags' are what we use to organize a text file (which is just a long string of characters) such that it represents a tree of elements that make up the html document.  Tags are not the elements themselves, rather they're the bits of text you use to tell the computer where an element begins and ends.  When you 'mark up' a document, you generally don't want those extra notes that are not really part of the text to be presented to the reader. HTML borrows a technique from another language, SGML, to provide an easy way for a computer to determine which parts are "MarkUp" and which parts are the content. By using '<' and '>' as a kind of parentheses, HTML can indicate the beginning and end of a tag, i.e. the presence of '<' tells the browser 'this next bit is markup, pay attention'.
 
 Whatever that tag (or 'open tag') does, it applies to the content following the tag. Unless you want that to be the entire rest of the document, you need to indicate when to stop using that tag and do something else, so '<' and '>' are again used. Since elements are typically nested within other elements, the browser needs to be able to distinguish between the end of the current tag or the beginning of a new tag (representing a nested element). This is done by adding a '/' right after the '<' to indicated that it's a 'close tag'. To indicate the beginning and end of a paragraph (indicated by the single letter 'p') you end up with something like this:
