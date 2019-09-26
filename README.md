@@ -11,10 +11,190 @@ The Web is an information system where resources are identified by URLs and can 
 - A Uniform Resource Locator (URL) allows to refer to a Web page.
 
 ## My first Web page.
-Creating an HTML page
-HTML:  https://jsbin.com/?html,output
+In this part of the lab you are going to create your first HTML page. 
+You can build and edit your HTML pages by either using online editors or editors that you can install on your machine like Visual Studio Code. 
 
+Using online editors:
+JSBin is an online editor that you can use to create HTML Web pages available at  https://jsbin.com/?html,output
 
+You may open the file (./hello.html) available here. The .html extension tells me this is a HTML file, and it will contain some HTML code. Let's look at this file in a browser by right clicking. The file is loaded from the disk and then it displays its contents.
+You can see that this is a simple file, it is just showing the text hello html. and it's also changed the title of
+the page to be my first HTML page. So there you have it, a very simple HTML page.
+Let's now go to an online tool( https://jsbin.com/) and try to create this page from scratch.
+
+Open up a new tab and go to jsbin.com. We will use the free version, no need to login or register. We will use the site just as a playground to create a simple HTML page. We'll have a quick look around the layout of the site.
+Here you can see there's a panel on the left which is a HTML panel to edit HTML code, and on the right you have an open panel that will eventually display whatever code you write on the left-hand side.
+The same holds for other languages such as JavaScript, CSS, and so on, you can also share code snippets and do lots lots more.
+You are encouraged to browse around. For this exercise, we're just going to use the site in this simple format.
+This page on the left-hand side was opened by default when we navigated here and it contained some HTML.
+This would be a good basic HTML code file that you would need to create in order to produce your first HTML page
+(you could probably do a little bit simpler but this is a very good template for us to start with). 
+Let's walk through some of the tags and elements that we see right in front of us.
+The first thing we see at the top of the page is a DOCTYPE declaration. This always comes before everything else in a HTML file.
+It's actually just some information for the browser about what version of HTML the page is written in.
+And in this case here, it signifies that the page is written in HTML5.
+The next tag we see is the html tag, and as you can see we have the beginning tag here and the ending tag at the end,
+**which means everything on a HTML page is contained within these two tags**.
+So all other tags must be contained or nested within this tag, and it tells the browser of course
+that this is a HTML document. 
+In this example, we then have a head tag, again the beginning and end, head tag, and as you can see, this head tag contains other types of elements. You can see in this example there's a meta and a title element, and there are more than these two.
+We've actually seen the title element in action already. It defines the title for the page,
+that's used in the browser tabs or
+toolbar and the title is
+also used in the browser history.
+So for example in our page we had typed:
+"my first HTML page",
+and that's where that would be created.
+So that's the head tag.
+Next up is the body element.
+And as its name suggests,
+this element contains the body of
+the page, meaning all of its contents.
+As you learn more and more about
+HTML you'll see there's lots of different tags
+you can put in here to do various different things within
+your HTML page, but for now as in
+our example, we'll just type some text.
+Hello HTML!.
+And as you can see, output is now
+appearing because we have some content in our body.
+And I can do a lot more here if I want to,
+but for now that's just showing
+you that this page has
+created the same output as our original page "Hello HTML!",
+and the page title we've said is my first HTML page,
+and that's the amount of code it
+takes to construct that page.
+
+In this video, I want to show you options in
+Visual Studio Code for preview in HTML in a browser.
+By default, Visual Studio Code gives you
+very little help out of the box. So what does that mean?
+Well, take this simple page, hello.html
+If you want see it in a browser,
+there are no default
+commands in Visual Studio Code to help.
+Instead, I have to locate the file on my disk, and use my
+operating system menu commands to
+open it in a browser like so.
+So that's my first option to preview my HTML,
+and it may be enough for very small projects.
+Given that I know the format of the
+address to type into the browser,
+I can load other pages as well.
+So for example, if I change hello.html to images.html,
+I can load a different page.
+But let's go back to our original page.
+The limitations of this preview approach are twofold.
+As you saw, I have to load
+the page manually the first time.
+And when I make changes to the file,
+I'm going to have to remember to save the file and
+refresh the page in the browser. I show you what I mean.
+So if I put my file to
+the side and put my visual studio code here,
+if I change my file and say "Hello Demo!",
+you can see the file has to be saved.
+So if I save my file,
+you notice my browser doesn't change.
+Instead, I have to also remember to hit refresh.
+So this two step approach, and therefore,
+this way to preview my HTML is still pretty cumbersome.
+So let's improve upon the situation
+with the power of Visual Studio Code extensions.
+As you may recall,
+you can access the extensions through
+the view extensions menu command.
+So here, the extensions marketplace is opened up,
+and just make sure we have enough room to show this.
+And then the search box,
+I'll type browser in to have a look at some
+of the extensions that contain the word browser.
+And as always, I encourage you to do your own research,
+review ratings and reviews,
+to determine which extensions are best for you to install.
+I'm just showing you examples here and I'm not endorsing
+any particular extension that I'm showing in this demo.
+That said, in order to show the demo,
+I'll choose one of these first
+three open in browser type extensions.
+I've worked with this one before,
+open-in-browser, so I click "Install".
+And as you can see, that has installed.
+I need to reload my work space in
+order to have that extension be activated.
+So let's use this extension to see how we can open
+the HTML page I have in front of me into a browser.
+This extension has two commands.
+One is the Ctrl+Alt+O command,
+which allows you to select
+a browser in order to open this page in.
+I won't do that for now because
+the other ways open your default browser,
+which is Ctrl+K+D.
+And as you can see, that's opened a copy
+of Microsoft Edge because that's my default browser,
+and it's launched my page.
+If I now expand the explorer panel in my editor,
+I can right click on any HTML page,
+and now I have an open in default browser selection.
+So here, I'll open the images page just here.
+I'll open that just with a command inside Visual Studio.
+So with this extension,
+I remove the task of finding my file on
+disk and using the context menu to load it.
+I also don't have to remember addresses for files.
+So an extension like this is definitely a step forward.
+However, to view my changes,
+I still have to save my file
+and reload it in the browser manually.
+So if I type in "Hello Demo2!" and I save my file,
+you can see, there is still no change.
+I have to refresh my page here.
+The next level of HTML preview extension you can
+install is one that offers a live preview.
+A live preview of a HTML page is when your page is
+actually loaded into a local Web server
+running on your machine.
+And so the pages live,
+meaning any changes that you make to the page, also
+show up immediately on the page and in a browser.
+I'll show you how you can do that right now.
+So first of all,
+let's go back to "Extensions" panel.
+And here, I'm going to search for something like,
+"Live Preview", and let's see what comes up there.
+I'll just expand this a little bit.
+So these first few extensions look
+interesting here from a live preview perspective.
+The first one, "Live Server",
+will actually launch a development local server
+and load the page into it.
+So I'll try that one out. I'll just click install.
+And as you can see,
+it installs pretty fast. I like that run.
+So now that that's installed,
+I have to reload this workspace
+in order to activate that extension.
+So now we have our new live server extension in place.
+Down below, we see that there is a live server button
+called "Go Live" that this extension has installed.
+And if I click on that button,
+it will start a server port 5500. I'll Just close that.
+And over here on the browser,
+you can see it's actually launched that server at
+this particular address with my page that I have opened.
+So what does that mean to me? Well, it
+means that if I was to
+change my HTML text again,
+and I haven't saved if I do file, save.
+I'd just watch the browser on the left hand side.
+As soon as I hit "Save",
+the live server to text
+those changes and service the page to me again.
+So that was a quick roundup of some options to make
+your HTML preview experience
+better in Visual Studio Code.
 
 ## Wireshark
 The basic tool for observing the messages exchanged between executing protocol entities is called a **packet sniffer**. As the name suggests, a packet sniffer passively copies ("sniffs") messages being sent from and received by your computer; it will also display the contents of the various protocol fields of these captured messages. For these labs, we'll use the **Wireshark** packet sniffer. Wireshark is a free/shareware packet sniffer that runs on Windows, Linux/Unix, and Mac computers. This lab will allow us to explore the HTTP protocol.
