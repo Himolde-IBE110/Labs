@@ -18,10 +18,10 @@ You can build and edit your HTML pages by either using online editors or editors
 Using online editors:
 JSBin is an online editor that you can use to create HTML Web pages available at  https://jsbin.com/?html,output
 
-You may open the file (./hello.html) available here. The .html extension tells me this is a HTML file, and it will contain some HTML code. Let's look at this file in a browser by right clicking. The file is loaded from the disk and then it displays its contents.
+You may open the file hello.hml available [here](../hello.html). The .html extension tells me this is a HTML file, and it will contain some HTML code. Let's look at this file in a browser by right clicking. The file is loaded from the disk and then it displays its contents.
 You can see that this is a simple file, it is just showing the text hello html. and it's also changed the title of
 the page to be my first HTML page. So there you have it, a very simple HTML page.
-Let's now go to an online tool( https://jsbin.com/) and try to create this page from scratch.
+Let's now go to an online tool(https://jsbin.com/) and try to create this page from scratch.
 
 Open up a new tab and go to jsbin.com. We will use the free version, no need to login or register. We will use the site just as a playground to create a simple HTML page. We'll have a quick look around the layout of the site.
 Here you can see there's a panel on the left which is a HTML panel to edit HTML code, and on the right you have an open panel that will eventually display whatever code you write on the left-hand side.
@@ -72,10 +72,7 @@ The browser sees the letters '<p>' and decides 'A new paragraph is starting, I'd
 
 For example, the '<em>' tag is used for element that needs Emphasis.  The  '<' and '>' indicate that this is a tag, and the "little bits of text" in between tell us what kind of tag it is.  To completely describe the element, it needs an open and close tag, with everything in between the tags is the contents of the element:
   
-  
-
-
-
+![alt text][tags.png]
 
 Most tags have open and close versions, but there are a few strange ones.  We'll learn more about these later, but we generally refer to the strange ones as "self closing" tags.   Usually these tags represent an element that is completely described by its attributes, and thus there is no need for other content.  So if you see something like this:
 ```html
@@ -122,8 +119,10 @@ To download and install the Wireshark software, go to http://www.wireshark.org/d
 
 When you run the Wireshark program, you’ll get a startup screen that looks something like the screen below.  Different versions of Wireshark will have different startup screens – so don’t panic if yours doesn’t look exactly like the screen below!  The Wireshark documentation states “As Wireshark runs on many different platforms with many different window managers, different styles applied and there are different versions of the underlying GUI toolkit used, your screen might look different from the provided screenshots. But as there are no real differences in functionality these screenshots should still be well understandable.”  Well said.
 
- 
-Figure 2: Initial Wireshark Screen
+
+
+
+![Initial Wireshark Screen][InitialWiresharkScreen.png]
 
 There’s not much interesting on this screen.  But note that under the Capture section, there is a list of so-called interfaces.  The computer we’re taking these screenshots from has just one real interface – “Wi-Fi en0,” which is the interface for Wi-Fi access.  All packets to/from this computer will pass through the Wi-Fi interface, so it’s here where we want to capture packets.  On a Mac, double click on this interface (or on another computer locate the interface on startup page through which you are getting Internet connectivity, e.g., mostly likely a WiFi or Ethernet interface, and select that interface.
 
@@ -144,6 +143,13 @@ The best way to learn about any new piece of software is to try it out!  We’ll
 *	Start up your favorite web browser, which will display your selected homepage.
 *	Start up the Wireshark software.  You will initially see a window similar to that shown in Figure 2. Wireshark has not yet begun capturing packets.
 * To begin packet capture, select the Capture pull down menu and select Interfaces. This will cause the “Wireshark: Capture Interfaces” window to be displayed, as shown in Figure 4.
+
+
+
+
+![Wireshark Graphical User Interface][WiresharkUserInterface.png]
+
+
 
   Figure 4: Wireshark Capture Interface Window
 
@@ -190,9 +196,7 @@ Your browser should display the very simple, one-line HTML file.
 
 Your Wireshark window should look similar to the window shown in Figure 1.  If you are unable to run Wireshark on a live network connection, you can download a packet trace that was created when the steps above were followed. 
 
- 
-
-Figure 1: Wireshark Display after http://gaia.cs.umass.edu/wireshark-labs/ HTTP-wireshark-file1.html has been retrieved by your browser
+![Wireshark Display after http://gaia.cs.umass.edu/wireshark-labs/ HTTP-wireshark-file1.html has been retrieved by your browser][fig1_HTTPLab.png]
 
 The example in Figure 1 shows in the packet-listing window that two HTTP messages were captured: the GET message (from your browser to the gaia.cs.umass.edu web server) and the response message from the server to your browser.  The packet-contents window shows details of the selected message (in this case the HTTP OK message, which is highlighted in the packet-listing window).  Recall that since the HTTP message was carried inside a TCP segment, which was carried inside an IP datagram, which was carried within an Ethernet frame, Wireshark displays the Frame, Ethernet, IP, and TCP packet information as well.  We want to minimize the amount of non-HTTP data displayed (we’re interested in HTTP here, and will be investigating these other protocols is later labs), so make sure the boxes at the far left of the Frame, Ethernet, IP and TCP information have a plus sign or a right-pointing triangle (which means there is hidden, undisplayed information), and the HTTP line has a minus sign or a down-pointing triangle (which means that all information about the HTTP message is displayed).
 
