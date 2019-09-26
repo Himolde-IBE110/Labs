@@ -7,8 +7,10 @@ You will create a Web page and verify what happens when you ask the Web client (
 
 The Web is an information system where resources are identified by URLs and can be accessed via the HTTP protocol. It is based on 3 technologies: 
 - the Hypertext Transfer Protocol (HTTP): the underlying protocol used by the World Wide Web that defines how messages are formatted and transmitted, and what actions Web servers and clients (browsers) should take in response to a message received. 
-- The Hypertext Markup Language (HTML). It is the markup language we use to write documents that can be displayed in a Web browser.  The current HTML version is HTML5. Modern Web pages and Web applications are generally composed of at least three components, so what people often mean when they say 'HTML5' is the trio of languages: HTML5, CSS3 and JavaScript. The 'HTML' part contains all the content, organized into a logical structure.  This is the part that an author might be most concerned with: the words, chapter headings, figures, diagrams, etc. HTML5 was developed to provide more powerful and flexible ways for developers to create dynamic Web pages.
-The 'CSS' part (version 3 being current) is all about the presentation or style of the page; what it looks like without too much regard for the specific content. You may think of it as the way you might specify a "theme" in a word processing document, setting fonts, sizes, indentations and whatever else may apply to what it looks like. The 'JavaScript', or 'JS' for short, part is about the actions a page can take such as interaction with the user, and customizing and changing the page according to any number of parameters.  This is what allows a Web page to be more than just a document, but potentially a Web application. 
+- The Hypertext Markup Language (HTML). It is the markup language we use to write documents that can be displayed in a Web browser.  The current HTML version is HTML5. Modern Web pages and Web applications are generally composed of at least three components, so what people often mean when they say 'HTML5' is the trio of languages: HTML5, CSS3 and JavaScript.
+  - The 'HTML' part contains all the content, organized into a logical structure.  This is the part that an author might be most concerned with: the words, chapter headings, figures, diagrams, etc. HTML5 was developed to provide more powerful and flexible ways for developers to create dynamic Web pages.
+  - The 'CSS' part (version 3 being current) is all about the presentation or style of the page; what it looks like without too much regard for the specific content. You may think of it as the way you might specify a "theme" in a word processing document, setting fonts, sizes, indentations and whatever else may apply to what it looks like. 
+  - The 'JavaScript', or 'JS' for short, part is about the actions a page can take such as interaction with the user, and customizing and changing the page according to any number of parameters.  This is what allows a Web page to be more than just a document, but potentially a Web application. 
 - A Uniform Resource Locator (URL) allows to refer to a Web resource (web pages, images, etc), specifying its location on a computer network and a mechanism for retrieving it.
 
 ## My first Web page.
@@ -18,7 +20,7 @@ You can build and edit your HTML pages by either using online editors or editors
 Using online editors:
 JSBin is an online editor that you can use to create HTML Web pages available at  https://jsbin.com/?html,output
 
-This is a valid html file. You can copy it and save it with a .html extension and your browser will show its contents:
+This is a valid html file. You can find it here: https://himolde-ibe110.github.io/Labs/hello.html) When you open it on your browser, it will show the contents of the page. You will see just a "Hello Word!" sentence. If the toolbar of your browser is visible, you will see also the title of the page as "My First HTML Page". If you right click on the page and choose See the source code of the page, you should see this:
 ```html
 <!DOCTYPE html>
 <html>
@@ -44,30 +46,35 @@ You are encouraged to browse around. For this exercise, we're just going to use 
 This page on the left-hand side was opened by default when we navigated here and it contained some HTML.
 This would be a good basic HTML code file that you would need to create in order to produce your first HTML page
 (you could probably do a little bit simpler but this is a very good template for us to start with). 
+
 Let's walk through some of the tags and elements that we see right in front of us.
 The first thing we see at the top of the page is a DOCTYPE declaration. This always comes before everything else in a HTML file.
 It's actually just some information for the browser about what version of HTML the page is written in.
 And in this case here, it signifies that the page is written in HTML5.
+
 The next tag we see is the html tag, and as you can see we have the beginning tag here and the ending tag at the end,
 **which means everything on a HTML page is contained within these two tags**.
-So all other tags must be contained or nested within this tag. It tells the browser that this is a HTML document. 
+All other tags must be contained or nested within this tag. It tells the browser that this is a HTML document. 
+
 In this example, we then have a head tag, again the beginning and end, head tag, and as you can see, this head tag contains other types of elements. You can see in this example there's a meta and a title element, and there are more than these two.
 We've actually seen the title element in action already. It defines the title for the page, that's used in the browser tabs or
 toolbar and the title is also used in the browser history.
 So for example in our page we had typed: "My first HTML page", and that's where that would be created.
-Next up after the head tag is the body element.
-And as its name suggests, this element contains the body of the page (all of its contents).
-There's lots of different tags in HTML you can put in here to do various different things within your HTML page, but for now as in
-our example, we'll just type some text. Hello HTML!.
-And as you can see, output is now appearing because we have some content in our body.
-And I can do a lot more here if I want to,
-but for now that's just showing you that this page has created the same output as our original page "Hello HTML!",
-and the page title we've said is my first HTML page, and that's the amount of code it takes to construct that page.
+The browser's viewport is the area of the window in which web content can be seen. This is important mainly for mobile devices. You can read more about it here: https://www.quirksmode.org/mobile/viewports2.html.
 
-'Tags' are what we use to organize a text file (which is just a long string of characters) such that it represents a tree of elements that make up the html document.  Tags are not the elements themselves, rather they're the bits of text you use to tell the computer where an element begins and ends. (Similar to Latex)
+Next up after the head tag is the body element.
+As its name suggests, this element contains the body of the page (all of its contents).
+There's lots of different tags in HTML you can put in here to do various different things within your HTML page, but for now as in
+our example, we'll just type some text.ex. 
+"Hello HTML!".
+And as you can see, output is now appearing to the right because we have some content in our body.
+There is a lot more you can do here if you want to,
+but for now just note that's the amount of code it took to construct that page.
+
+**'Tags'** are what we use to organize a text file (which is just a long string of characters) such that it represents a tree of elements that make up the html document.  Tags are not the elements themselves, rather they're the bits of text you use to tell the computer where an element begins and ends. (Similar to Latex)
 When you 'mark up' a document, you generally don't want those extra notes that are not really part of the text to be presented to the reader. HTML borrows a technique from another language, SGML, to provide an easy way for a computer to determine which parts are "MarkUp" and which parts are the content. By using '<' and '>' as a kind of parentheses, HTML can indicate the beginning and end of a tag, i.e. the presence of '<' tells the browser 'this next bit is markup, pay attention'.
 
-![A visualization of an HTML document / an HTML Page](structure.png)
+![A visualization of an HTML document / an HTML Page](Pictures/structure.png)
 
 Whatever that tag (or 'open tag') does, it applies to the content following the tag. Unless you want that to be the entire rest of the document, you need to indicate when to stop using that tag and do something else, **so '<' and '>' are again used**. Since elements are typically nested within other elements, the browser needs to be able to distinguish between the end of the current tag or the beginning of a new tag (representing a nested element). This is done by adding a '/' right after the '<' to indicated that it's a 'close tag'. To indicate the beginning and end of a paragraph (indicated by the single letter 'p') you end up with something like this:
 ```html
@@ -83,9 +90,9 @@ Most tags have open and close versions, but there are a few strange ones.  We'll
 ```html
     <img src="https://goo.gl/pVxY0e" alt="Floating Flower"/>
 ```
-... then you should know that the slash at the end of the open tag is sort of a shorthand for a close tag, so you won't see any other indication that this element is now complete.  There are also a few tags that don't even use the '/' at the end, they just don't have any close tag at all.  This works because all of the information this tag needs is declared in an "attribute".
+... then you should know that the slash ('/') at the end of the open tag is sort of a shorthand for a close tag, so you won't see any other indication that this element is now complete.  There are also a few tags that don't even use the '/' at the end, they just don't have any close tag at all.  This works because all of the information this tag needs is declared in an "attribute".
 
-## HTTP
+## HTTP Protocol
 The World Wide Web is about communication between web clients and web servers. Clients are often browsers (Chrome, Brave, Safari), but they can be any type of program or device. Servers are always on computers that serve the requests received from the clients.
 Communication between clients and servers is done by requests and responses (it is called a request–response protocol in the client–server computing model):
 
@@ -98,7 +105,7 @@ Communication between clients and servers is done by requests and responses (it 
 
 ## Wireshark 
 The basic tool for observing the messages exchanged between executing protocol entities is called a **packet sniffer**. As the name suggests, a packet sniffer passively copies ("sniffs") messages being sent from and received by your computer; it will also display the contents of the various protocol fields of these captured messages.  A packet sniffer itself is passive. It observes messages being sent and received by applications and protocols running on your computer, but never sends packets itself. Similarly, received packets are never explicitly addressed to the packet sniffer.  Instead, a packet sniffer receives a copy of packets that are sent/received from/by application and protocols executing on your machine.
-A packet sniffer includes a packet analyzer component, which displays the contents of all fields within a protocol message.  In order to do so, the packet analyzer must “understand” the structure of all messages exchanged by protocols.  For example, suppose we are interested in displaying the various fields in messages exchanged by the HTTP protocol. The packet analyzer understands, among others, the HTTP protocol and so, for example, knows that the first bytes of an HTTP message will contain the string “GET,” “POST,” or “HEAD,” as shown in Figure 2.8 in the book.
+A packet sniffer includes a packet analyzer component, which displays the contents of all fields within a protocol message.  In order to do so, the packet analyzer must “understand” the structure of all messages exchanged by protocols.  For example, suppose we are interested in displaying the various fields in messages exchanged by the HTTP protocol. The packet analyzer understands, among others, the HTTP protocol and so, for example, knows that the first bytes of an HTTP message will contain the string **“GET,” “POST,” or “HEAD,”** as shown in Figure 2.8 in the book.
 
 For these labs, we will be using the Wireshark packet sniffer [http://www.wireshark.org/], allowing us to display the contents of messages being sent/received from/by protocols at different levels of the protocol stack.  (Technically speaking, Wireshark is a packet analyzer that uses a packet capture library in your computer). Wireshark is a free network protocol analyzer that runs on Windows, Mac, and Linux/Unix computer. It’s an ideal packet analyzer for our lab – it is stable, has a large user base and well-documented support that includes a user-guide (http://www.wireshark.org/docs/wsug_html_chunked/), man pages (http://www.wireshark.org/docs/man-pages/), and a detailed FAQ (http://www.wireshark.org/faq.html), rich functionality that includes the capability to analyze hundreds of protocols, and a well-designed user interface.
 
@@ -162,16 +169,16 @@ Congratulations!  You’ve now completed the first part of the lab.
 
 Having gotten our feet wet with the Wireshark packet sniffer in the introductory lab, we’re now ready to use Wireshark to investigate protocols in operation. In this lab, we’ll explore several aspects of the HTTP protocol: the basic GET/response interaction and  retrieving HTML files with embedded objects. Before beginning these labs, you might want to review Section 2.2 of the text. 
 
-1. The Basic HTTP GET/response interaction
+#### The Basic HTTP GET/response interaction (see also page 103 of the Kurose book)
 
 Let’s begin our exploration of HTTP by downloading a very simple HTML file - one that is very short, and contains no embedded objects.  Do the following:
-1.	Start up your web browser.
-2.	Start up the Wireshark packet sniffer, as described in the Introductory lab (but don’t yet begin packet capture).  Enter “http” (just the letters, not the quotation marks) in the display-filter-specification window, so that only captured HTTP messages will be displayed later in the packet-listing window.  (We’re only interested in the HTTP protocol here, and don’t want to see the clutter of all captured packets).   
-3.	Wait a bit more than one minute (we’ll see why shortly), and then begin Wireshark packet capture.
-4.	Enter the following to your browser
+*	Start up your web browser.
+*	Start up the Wireshark packet sniffer, as described in the Introductory lab (but don’t yet begin packet capture).  Enter “http” (just the letters, not the quotation marks) in the display-filter-specification window, so that only captured HTTP messages will be displayed later in the packet-listing window.  (We’re only interested in the HTTP protocol here, and don’t want to see the clutter of all captured packets).   
+*	Wait a bit more than one minute (we’ll see why shortly), and then begin Wireshark packet capture.
+*	Enter the following to your browser
 http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file1.html
 Your browser should display the very simple, one-line HTML file.
-5.	Stop Wireshark packet capture.
+*	Stop Wireshark packet capture.
 
 Your Wireshark window should look similar to the window shown in the Figure below.  If you are unable to run Wireshark on a live network connection, you can download a packet trace that was created when the steps above were followed. 
 
@@ -182,11 +189,11 @@ The example  shows in the packet-listing window that two HTTP messages were capt
 (Note: You should ignore any HTTP GET and response for favicon.ico.  If you see a reference to this file, it is your browser automatically asking the server if it (the server) has a small icon file that should be displayed next to the displayed URL in your browser.  We’ll ignore references to this pesky file in this lab.).
 
 By looking at the information in the HTTP GET and response messages, answer the following questions.  When answering the following questions, you should print out the GET and response messages (see the introductory Wireshark lab for an explanation of how to do this) and indicate where in the message you’ve found the information that answers the following questions. When you hand in your assignment, annotate the output so that it’s clear where in the output you’re getting the information for your answer (e.g., for our classes, we ask that students markup paper copies with a pen, or annotate electronic copies with text in a colored font).
-1.	Is your browser running HTTP version 1.0 or 1.1?  What version of HTTP is the server running?
-2.	What languages (if any) does your browser indicate that it can accept to the server?
-3.	What is the IP address of your computer?  Of the gaia.cs.umass.edu server?
-4.	What is the status code returned from the server to your browser?
-5.	When was the HTML file that you are retrieving last modified at the server?
+*	Is your browser running HTTP version 1.0 or 1.1?  What version of HTTP is the server running?
+*	What languages (if any) does your browser indicate that it can accept to the server?
+*	What is the IP address of your computer?  Of the gaia.cs.umass.edu server?
+*	What is the status code returned from the server to your browser?
+*	When was the HTML file that you are retrieving last modified at the server?
 
 In your answer to question 5 above, you might have been surprised to find that the document you just retrieved was last modified within a minute before you downloaded the document. That’s because (for this particular file), the gaia.cs.umass.edu server is setting the file’s last-modified time to be the current time, and is doing so once per minute. Thus, if you wait a minute between accesses, the file will appear to have been recently modified, and hence your browser will download a “new” copy of the document.
 <!--
@@ -206,7 +213,7 @@ Answer the following questions:
 10.	Now inspect the contents of the second HTTP GET request from your browser to the server.  Do you see an “IF-MODIFIED-SINCE:” line in the HTTP GET? If so, what information follows the “IF-MODIFIED-SINCE:” header?
 11.	What is the HTTP status code and phrase returned from the server in response to this second HTTP GET?  Did the server explicitly return the contents of the file?   Explain.
 -->
-2. HTML Documents with Embedded Objects
+#### HTML Documents with Embedded Objects
 
 Now we can look at what happens when your browser downloads a file with embedded objects, i.e., a file that includes other objects (in the example below, image files) that are stored on another server(s).
 
