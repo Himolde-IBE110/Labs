@@ -148,20 +148,20 @@ This looks more interesting! The Wireshark interface has five major components:
 
 The best way to learn about any new piece of software is to try it out!  We’ll assume that your computer is connected to the Internet via a wired Ethernet interface:
 
-*	Start up your favorite web browser, which will display your selected homepage.
-*	Start up the Wireshark software.  You will initially see a window similar to that shown in the Figure below. Wireshark has not yet begun capturing packets.
-* To begin packet capture, select the Capture pull down menu and select Interfaces. This will cause the “Wireshark: Capture Interfaces” window to be displayed.
+1.	Start up your favorite web browser, which will display your selected homepage.
+2.	Start up the Wireshark software.  You will initially see a window similar to that shown in the Figure below. Wireshark has not yet begun capturing packets.
+3.  To begin packet capture, select the Capture pull down menu and select Interfaces. This will cause the “Wireshark: Capture Interfaces” window to be displayed.
 
 ![Wireshark Capture Interface Window](Pictures/WiresharkUserInterface.png)
 
-* You’ll see a list of the interfaces on your computer as well as a count of the packets that have been observed on that interface so far.  Click on Start for the interface on which you want to begin packet capture.  Packet capture will now begin - Wireshark is now capturing all packets being sent/received from/by your computer!
-* Once you begin packet capture, a window will appear.  This window shows the packets being captured.  By selecting Capture pulldown menu and selecting Stop, you can stop packet capture.   But don’t stop packet capture yet.  Let’s capture some interesting packets first.  To do so, we’ll need to generate some network traffic.  Let’s do so using a web browser, which will use the HTTP protocol that we will study in detail in class to download content from a website.
-* While Wireshark is running, enter the URL: 
+4. You’ll see a list of the interfaces on your computer as well as a count of the packets that have been observed on that interface so far.  Click on Start for the interface on which you want to begin packet capture.  Packet capture will now begin - Wireshark is now capturing all packets being sent/received from/by your computer!
+5. Once you begin packet capture, a window will appear.  This window shows the packets being captured.  By selecting Capture pulldown menu and selecting Stop, you can stop packet capture.   But don’t stop packet capture yet.  Let’s capture some interesting packets first.  To do so, we’ll need to generate some network traffic.  Let’s do so using a web browser, which will use the HTTP protocol that we will study in detail in class to download content from a website.
+6. While Wireshark is running, enter the URL: 
 http://gaia.cs.umass.edu/wireshark-labs/INTRO-wireshark-file1.html
 and have that page displayed in your browser. In order to display this page, your browser will contact the HTTP server at gaia.cs.umass.edu and exchange HTTP messages with the server in order to download this page, as discussed in section 2.2 of the text.  The Ethernet frames containing these HTTP messages (as well as all other frames passing through your Ethernet adapter) will be captured by Wireshark.
-* After your browser has displayed the INTRO-wireshark-file1.html page (it is a simple one line of congratulations), stop Wireshark packet capture by selecting stop in the Wireshark capture window.  You now have live packet data that contains all protocol messages exchanged between your computer and other network entities!  The HTTP message exchanges with the gaia.cs.umass.edu web server should appear somewhere in the listing of packets captured.  But there will be many other types of packets displayed as well.  Even though the only action you took was to download a web page, there were evidently many other protocols running on your computer that are unseen by the user.  We’ll learn much more about these protocols as we progress through the text!  For now, you should just be aware that there is often much more going on than “meet’s the eye”!
-* Type in “http” (without the quotes, and in lower case – all protocol names are in lower case in Wireshark) into the display filter specification window at the top of the main Wireshark window.  Then select Apply (to the right of where you entered “http”).  This will cause only HTTP message to be displayed in the packet-listing window.  
-* Find the HTTP GET message that was sent from your computer to the gaia.cs.umass.edu HTTP server. (Look for an HTTP GET message in the “listing of captured packets” portion of the Wireshark window (see Figure 3) that shows “GET” followed by the gaia.cs.umass.edu URL that you entered.  When you select the HTTP GET message, the Ethernet frame, IP datagram, TCP segment, and HTTP message header information will be displayed in the packet-header window . By clicking on ‘+’ and ‘-‘ right-pointing and down-pointing arrowheads to the left side of the packet details window, minimize the amount of Frame, Ethernet, Internet Protocol, and Transmission Control Protocol information displayed.  Maximize the amount information displayed about the HTTP protocol.  Your Wireshark display should now look roughly as shown in Figure 5. (Note, in particular, the minimized amount of protocol information for all protocols except HTTP, and the maximized amount of protocol information for HTTP in the packet-header window).
+7. After your browser has displayed the INTRO-wireshark-file1.html page (it is a simple one line of congratulations), stop Wireshark packet capture by selecting stop in the Wireshark capture window.  You now have live packet data that contains all protocol messages exchanged between your computer and other network entities!  The HTTP message exchanges with the gaia.cs.umass.edu web server should appear somewhere in the listing of packets captured.  But there will be many other types of packets displayed as well.  Even though the only action you took was to download a web page, there were evidently many other protocols running on your computer that are unseen by the user.  We’ll learn much more about these protocols as we progress through the text!  For now, you should just be aware that there is often much more going on than “meet’s the eye”!
+8. Type in “http” (without the quotes, and in lower case – all protocol names are in lower case in Wireshark) into the display filter specification window at the top of the main Wireshark window.  Then select Apply (to the right of where you entered “http”).  This will cause only HTTP message to be displayed in the packet-listing window.  
+9. Find the HTTP GET message that was sent from your computer to the gaia.cs.umass.edu HTTP server. (Look for an HTTP GET message in the “listing of captured packets” portion of the Wireshark window (see Figure 3) that shows “GET” followed by the gaia.cs.umass.edu URL that you entered.  When you select the HTTP GET message, the Ethernet frame, IP datagram, TCP segment, and HTTP message header information will be displayed in the packet-header window . By clicking on ‘+’ and ‘-‘ right-pointing and down-pointing arrowheads to the left side of the packet details window, minimize the amount of Frame, Ethernet, Internet Protocol, and Transmission Control Protocol information displayed.  Maximize the amount information displayed about the HTTP protocol.  Your Wireshark display should now look roughly as shown in Figure 5. (Note, in particular, the minimized amount of protocol information for all protocols except HTTP, and the maximized amount of protocol information for HTTP in the packet-header window).
 
 Congratulations!  You’ve now completed the first part of the lab.
 
@@ -172,13 +172,13 @@ Having gotten our feet wet with the Wireshark packet sniffer in the introductory
 #### The Basic HTTP GET/response interaction (see also page 103 of the Kurose book)
 
 Let’s begin our exploration of HTTP by downloading a very simple HTML file - one that is very short, and contains no embedded objects.  Do the following:
-*	Start up your web browser.
-*	Start up the Wireshark packet sniffer, as described in the Introductory lab (but don’t yet begin packet capture).  Enter “http” (just the letters, not the quotation marks) in the display-filter-specification window, so that only captured HTTP messages will be displayed later in the packet-listing window.  (We’re only interested in the HTTP protocol here, and don’t want to see the clutter of all captured packets).   
-*	Wait a bit more than one minute (we’ll see why shortly), and then begin Wireshark packet capture.
-*	Enter the following to your browser
+1.	Start up your web browser.
+2.	Start up the Wireshark packet sniffer, as described in the Introductory lab (but don’t yet begin packet capture).  Enter “http” (just the letters, not the quotation marks) in the display-filter-specification window, so that only captured HTTP messages will be displayed later in the packet-listing window.  (We’re only interested in the HTTP protocol here, and don’t want to see the clutter of all captured packets).   
+3.	Wait a bit more than one minute (we’ll see why shortly), and then begin Wireshark packet capture.
+4.	Enter the following to your browser
 http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file1.html
 Your browser should display the very simple, one-line HTML file.
-*	Stop Wireshark packet capture.
+5.	Stop Wireshark packet capture.
 
 Your Wireshark window should look similar to the window shown in the Figure below.  If you are unable to run Wireshark on a live network connection, you can download a packet trace that was created when the steps above were followed. 
 
@@ -189,13 +189,11 @@ The example  shows in the packet-listing window that two HTTP messages were capt
 (Note: You should ignore any HTTP GET and response for favicon.ico.  If you see a reference to this file, it is your browser automatically asking the server if it (the server) has a small icon file that should be displayed next to the displayed URL in your browser.  We’ll ignore references to this pesky file in this lab.).
 
 By looking at the information in the HTTP GET and response messages, answer the following questions.  When answering the following questions, you should print out the GET and response messages (see the introductory Wireshark lab for an explanation of how to do this) and indicate where in the message you’ve found the information that answers the following questions. When you hand in your assignment, annotate the output so that it’s clear where in the output you’re getting the information for your answer (e.g., for our classes, we ask that students markup paper copies with a pen, or annotate electronic copies with text in a colored font).
-*	Is your browser running HTTP version 1.0 or 1.1?  What version of HTTP is the server running?
-*	What languages (if any) does your browser indicate that it can accept to the server?
-*	What is the IP address of your computer?  Of the gaia.cs.umass.edu server?
-*	What is the status code returned from the server to your browser?
-*	When was the HTML file that you are retrieving last modified at the server?
-
-In your answer to question 5 above, you might have been surprised to find that the document you just retrieved was last modified within a minute before you downloaded the document. That’s because (for this particular file), the gaia.cs.umass.edu server is setting the file’s last-modified time to be the current time, and is doing so once per minute. Thus, if you wait a minute between accesses, the file will appear to have been recently modified, and hence your browser will download a “new” copy of the document.
+1.	Is your browser running HTTP version 1.0 or 1.1?  What version of HTTP is the server running?
+2.	What languages (if any) does your browser indicate that it can accept to the server?
+3.	What is the IP address of your computer?  Of the gaia.cs.umass.edu server?
+4.	What is the status code returned from the server to your browser?
+5.	Refresh the page. What is the HTTP status code and phrase returned from the server in response to this second HTTP GET?  Did the server explicitly return the contents of the file? 
 <!--
 2. The HTTP CONDITIONAL GET/response interaction
 Recall from Section 2.2.5 of the text, that most web browsers perform object caching and thus perform a conditional GET when retrieving an HTTP object. Before performing the steps below, make sure your browser’s cache is empty. (To do this under Firefox, select Tools->Clear Recent History and check the Cache box, or for Internet Explorer, select Tools->Internet Options->Delete File; these actions will remove cached files from your browser’s cache.) Now do the following:
@@ -218,16 +216,20 @@ Answer the following questions:
 Now we can look at what happens when your browser downloads a file with embedded objects, i.e., a file that includes other objects (in the example below, image files) that are stored on another server(s).
 
 Do the following:
-•	Start up your web browser, and make sure your browser’s cache is cleared, as discussed above.
-•	Start up the Wireshark packet sniffer
-•	Enter the following URL into your browser
+1.	Start up your web browser, and make sure your browser’s cache is cleared, as discussed above.
+2.	Start up the Wireshark packet sniffer
+3.	Enter the following URL into your browser
 http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html
-Your browser should display a short HTML file with two images. These two images are referenced in the base HTML file.  That is, the images themselves are not contained in the HTML; instead the URLs for the images are contained in the downloaded HTML file. As discussed in the textbook, your browser will have to retrieve these logos from the indicated web sites.   Our publisher’s logo is retrieved from the gaia.cs.umass.edu web site.  The image of the cover for our 5th edition (one of our favorite covers) is stored at the caite.cs.umass.edu server. (These are two different web servers inside cs.umass.edu).
-•	Stop Wireshark packet capture, and enter “http” in the display-filter-specification window, so that only captured HTTP messages will be displayed. 
+Your browser should display a short HTML file with two images. These two images are referenced in the base HTML file.  That is, the images themselves are not contained in the HTML (they are just linked, as you saw in the first part of the lab, what you have in the html document is a reference to the image in a img tag); instead the URLs for the images are contained in the downloaded HTML file (src attribute). As discussed in the textbook, your browser will have to retrieve these logos from the indicated web sites. Our publisher’s logo is retrieved from the gaia.cs.umass.edu web site. The image of the cover for our 5th edition (one of our favorite covers) is stored at the caite.cs.umass.edu server. (These are two different web servers inside cs.umass.edu).
+4.	Stop Wireshark packet capture, and enter “http” in the display-filter-specification window, so that only captured HTTP messages will be displayed. 
 
-Answer the following questions:
-How many HTTP GET request messages did your browser send?  To which Internet addresses were these GET requests sent?
-
+#### Answer the following questions:
+1. How many HTTP GET request messages did your browser send?  
+2. To which Internet addresses were these GET requests sent?
+3. Verify that the source and destination addresses actually correspond to the computers you think.
+  1. Open a terminal Window: {Windows: press the magnifier /type cmd, Mac: Applications/Utilities/Terminal, Linux: run terminal}
+  2. To know the address of your computer, you can run: {Windows: ipconfig, Mac, Linux: ifconfig) 
+  3. To resolve the address of the remote computer, use the DNS service as we studied in class. Call the program nsloop nameoftheserver (gaia.cs.umass.edu) and verify that the address returned is the same that appears in Wireshark.
 
 
 
