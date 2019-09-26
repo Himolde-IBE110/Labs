@@ -219,16 +219,17 @@ Do the following:
 2.	Start up the Wireshark packet sniffer
 3.	Enter the following URL into your browser
 http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html
-Your browser should display a short HTML file with two images. These two images are referenced in the base HTML file.  That is, the images themselves are not contained in the HTML (they are just linked, as you saw in the first part of the lab, what you have in the html document is a reference to the image in a img tag); instead the URLs for the images are contained in the downloaded HTML file (src attribute). As discussed in the textbook, your browser will have to retrieve these logos from the indicated web sites. Our publisher’s logo is retrieved from the gaia.cs.umass.edu web site. The image of the cover for our 5th edition (one of our favorite covers) is stored at the caite.cs.umass.edu server. (These are two different web servers inside cs.umass.edu).
+Your browser should display a short HTML file with two images. These two images are referenced in the base HTML file.  That is, the images themselves are not contained in the HTML (they are just linked, as you saw in the first part of the lab, what you have in the html document is a reference to the image in a img tag); instead the URLs for the images are contained in the downloaded HTML file (src attribute). As discussed in the textbook, your browser will have to retrieve these logos from the indicated web sites. Pearson's logo is retrieved from the gaia.cs.umass.edu web site. The image of the cover for the 5th edition of the book(Computer Networking: A Top-Down Approach) is stored at the caite.cs.umass.edu server. (These are two different web servers inside cs.umass.edu).
 4.	Stop Wireshark packet capture, and enter “http” in the display-filter-specification window, so that only captured HTTP messages will be displayed. 
 
 #### Answer the following questions:
 1. How many HTTP GET request messages did your browser send?  
 2. To which Internet addresses were these GET requests sent?
-3. Verify that the source and destination addresses actually correspond to the computers you think.
+3. Verify that the source and destination addresses actually correspond to the computers you expect.
   1. Open a terminal Window: {Windows: press the magnifier /type cmd, Mac: Applications/Utilities/Terminal, Linux: run terminal}
   2. To know the address of your computer, you can run: {Windows: ipconfig, Mac, Linux: ifconfig) 
-  3. To resolve the address of the remote computer, use the DNS service as we studied in class. Call the program nsloop nameoftheserver (gaia.cs.umass.edu) and verify that the address returned is the same that appears in Wireshark.
+  3. To resolve the address of the remote computer, use the DNS service as we studied in class. Call the program 
+      nsloop nameoftheserver (gaia.cs.umass.edu) and verify that the address returned is the same that appears in Wireshark.
 
 
 
