@@ -5,8 +5,8 @@ One's understanding of network protocols can often be greatly deepened by "seein
 
 You will create a Web page and verify what happens when you ask the Web client (your browser) to access it through the network. The objective in this lab is that you observe and learn by doing.
 
-The Web is a huge document database, linked by hypertexts. It is based on 3 technologies: 
-- the Hypertext Transfer Protocol (HTTP): the underlying protocol used by the World Wide Web that defines how messages are formatted and transmitted, and what actions Web servers and clients (browsers) should take in response to various commands. 
+The Web is an information system where resources are identified by URLs and can be accessed via the HTTP protocol. It is based on 3 technologies: 
+- the Hypertext Transfer Protocol (HTTP): the underlying protocol used by the World Wide Web that defines how messages are formatted and transmitted, and what actions Web servers and clients (browsers) should take in response to a message received. 
 - The Hypertext Markup Language (HTML). It is the markup language we use to write documents that can be displayed in a Web browser.  Web pages
 - A Uniform Resource Locator (URL) allows to refer to a Web page.
 
