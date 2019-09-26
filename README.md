@@ -67,7 +67,7 @@ and the page title we've said is my first HTML page, and that's the amount of co
 'Tags' are what we use to organize a text file (which is just a long string of characters) such that it represents a tree of elements that make up the html document.  Tags are not the elements themselves, rather they're the bits of text you use to tell the computer where an element begins and ends.  When you 'mark up' a document, you generally don't want those extra notes that are not really part of the text to be presented to the reader. HTML borrows a technique from another language, SGML, to provide an easy way for a computer to determine which parts are "MarkUp" and which parts are the content. By using '<' and '>' as a kind of parentheses, HTML can indicate the beginning and end of a tag, i.e. the presence of '<' tells the browser 'this next bit is markup, pay attention'.
 
 
-![A visualization of an HTML document (an HTML Page)][Pictures/structure.png]
+![A visualization of an HTML document / an HTML Page](structure.png)
 
 Whatever that tag (or 'open tag') does, it applies to the content following the tag. Unless you want that to be the entire rest of the document, you need to indicate when to stop using that tag and do something else, so '<' and '>' are again used. Since elements are typically nested within other elements, the browser needs to be able to distinguish between the end of the current tag or the beginning of a new tag (representing a nested element). This is done by adding a '/' right after the '<' to indicated that it's a 'close tag'. To indicate the beginning and end of a paragraph (indicated by the single letter 'p') you end up with something like this:
 ```html
@@ -77,7 +77,7 @@ The browser sees the letters '<p>' and decides 'A new paragraph is starting, I'd
 
 For example, the '<em>' tag is used for element that needs Emphasis.  The  '<' and '>' indicate that this is a tag, and the "little bits of text" in between tell us what kind of tag it is.  To completely describe the element, it needs an open and close tag, with everything in between the tags is the contents of the element:
   
-![alt text][Pictures/tags.png]
+![HTML Tags](Pictures/tags.png)
 
 Most tags have open and close versions, but there are a few strange ones.  We'll learn more about these later, but we generally refer to the strange ones as "self closing" tags.   Usually these tags represent an element that is completely described by its attributes, and thus there is no need for other content.  So if you see something like this:
 ```html
@@ -152,7 +152,7 @@ The best way to learn about any new piece of software is to try it out!  We’ll
 
 
 
-![Wireshark Graphical User Interface][Pictures/WiresharkUserInterface.png]
+![Wireshark Graphical User Interface](Pictures/WiresharkUserInterface.png)
 
 
 
@@ -201,7 +201,7 @@ Your browser should display the very simple, one-line HTML file.
 
 Your Wireshark window should look similar to the window shown in Figure 1.  If you are unable to run Wireshark on a live network connection, you can download a packet trace that was created when the steps above were followed. 
 
-![Wireshark Display after http://gaia.cs.umass.edu/wireshark-labs/ HTTP-wireshark-file1.html has been retrieved by your browser][Pictures/fig1_HTTPLab.png]
+![Wireshark Display after http://gaia.cs.umass.edu/wireshark-labs/ HTTP-wireshark-file1.html has been retrieved by your browser](Pictures/fig1_HTTPLab.png)
 
 The example in Figure 1 shows in the packet-listing window that two HTTP messages were captured: the GET message (from your browser to the gaia.cs.umass.edu web server) and the response message from the server to your browser.  The packet-contents window shows details of the selected message (in this case the HTTP OK message, which is highlighted in the packet-listing window).  Recall that since the HTTP message was carried inside a TCP segment, which was carried inside an IP datagram, which was carried within an Ethernet frame, Wireshark displays the Frame, Ethernet, IP, and TCP packet information as well.  We want to minimize the amount of non-HTTP data displayed (we’re interested in HTTP here, and will be investigating these other protocols is later labs), so make sure the boxes at the far left of the Frame, Ethernet, IP and TCP information have a plus sign or a right-pointing triangle (which means there is hidden, undisplayed information), and the HTTP line has a minus sign or a down-pointing triangle (which means that all information about the HTTP message is displayed).
 
