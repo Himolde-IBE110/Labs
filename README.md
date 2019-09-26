@@ -1,5 +1,5 @@
 # Labs
-Lab exercises. Introduction to Information Technology. Networking. Based on Supplement Material to the book Computer Networking: A Top-Down Approach, 7th ed., J.F. Kurose and K.W. Ross
+Lab exercises. Introduction to Information Technology. Networking. Based on *Supplement Material to the book Computer Networking: A Top-Down Approach, 7th ed., J.F. Kurose and K.W. Ross, https://www.w3schools.com/whatis/whatis_html.asp, Edx course HTML5 and CSS Fundamentals*
 
 One's understanding of network protocols can often be greatly deepened by "seeing protocols in action" and by "playing around with protocols" - observing the sequence of messages exchanges between two protocol entities, delving down into the details of protocol operation, and causing protocols to perform certain actions and then observing these actions and their consequences. In these Wireshark labs, we will do it in a real network environment. 
 
@@ -35,166 +35,42 @@ It's actually just some information for the browser about what version of HTML t
 And in this case here, it signifies that the page is written in HTML5.
 The next tag we see is the html tag, and as you can see we have the beginning tag here and the ending tag at the end,
 **which means everything on a HTML page is contained within these two tags**.
-So all other tags must be contained or nested within this tag, and it tells the browser of course
-that this is a HTML document. 
+So all other tags must be contained or nested within this tag. It tells the browser that this is a HTML document. 
 In this example, we then have a head tag, again the beginning and end, head tag, and as you can see, this head tag contains other types of elements. You can see in this example there's a meta and a title element, and there are more than these two.
-We've actually seen the title element in action already. It defines the title for the page,
-that's used in the browser tabs or
-toolbar and the title is
-also used in the browser history.
-So for example in our page we had typed:
-"my first HTML page",
-and that's where that would be created.
-So that's the head tag.
-Next up is the body element.
-And as its name suggests,
-this element contains the body of
-the page, meaning all of its contents.
-As you learn more and more about
-HTML you'll see there's lots of different tags
-you can put in here to do various different things within
-your HTML page, but for now as in
-our example, we'll just type some text.
-Hello HTML!.
-And as you can see, output is now
-appearing because we have some content in our body.
+We've actually seen the title element in action already. It defines the title for the page, that's used in the browser tabs or
+toolbar and the title is also used in the browser history.
+So for example in our page we had typed: "My first HTML page", and that's where that would be created.
+Next up after the head tag is the body element.
+And as its name suggests, this element contains the body of the page (all of its contents).
+There's lots of different tags in HTML you can put in here to do various different things within your HTML page, but for now as in
+our example, we'll just type some text. Hello HTML!.
+And as you can see, output is now appearing because we have some content in our body.
 And I can do a lot more here if I want to,
-but for now that's just showing
-you that this page has
-created the same output as our original page "Hello HTML!",
-and the page title we've said is my first HTML page,
-and that's the amount of code it
-takes to construct that page.
+but for now that's just showing you that this page has created the same output as our original page "Hello HTML!",
+and the page title we've said is my first HTML page, and that's the amount of code it takes to construct that page.
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>My First HTML Page</title>
+</head>
+<body>
+    Hello Word!
+</body>
+</html>
+```
+## HTTP
+The World Wide Web is about communication between web clients and web servers. Clients are often browsers (Chrome, Brave, Safari), but they can be any type of program or device. Servers are always on computers that serve the requests received from the clients.
+Communication between clients and servers is done by requests and responses:
 
-In this video, I want to show you options in
-Visual Studio Code for preview in HTML in a browser.
-By default, Visual Studio Code gives you
-very little help out of the box. So what does that mean?
-Well, take this simple page, hello.html
-If you want see it in a browser,
-there are no default
-commands in Visual Studio Code to help.
-Instead, I have to locate the file on my disk, and use my
-operating system menu commands to
-open it in a browser like so.
-So that's my first option to preview my HTML,
-and it may be enough for very small projects.
-Given that I know the format of the
-address to type into the browser,
-I can load other pages as well.
-So for example, if I change hello.html to images.html,
-I can load a different page.
-But let's go back to our original page.
-The limitations of this preview approach are twofold.
-As you saw, I have to load
-the page manually the first time.
-And when I make changes to the file,
-I'm going to have to remember to save the file and
-refresh the page in the browser. I show you what I mean.
-So if I put my file to
-the side and put my visual studio code here,
-if I change my file and say "Hello Demo!",
-you can see the file has to be saved.
-So if I save my file,
-you notice my browser doesn't change.
-Instead, I have to also remember to hit refresh.
-So this two step approach, and therefore,
-this way to preview my HTML is still pretty cumbersome.
-So let's improve upon the situation
-with the power of Visual Studio Code extensions.
-As you may recall,
-you can access the extensions through
-the view extensions menu command.
-So here, the extensions marketplace is opened up,
-and just make sure we have enough room to show this.
-And then the search box,
-I'll type browser in to have a look at some
-of the extensions that contain the word browser.
-And as always, I encourage you to do your own research,
-review ratings and reviews,
-to determine which extensions are best for you to install.
-I'm just showing you examples here and I'm not endorsing
-any particular extension that I'm showing in this demo.
-That said, in order to show the demo,
-I'll choose one of these first
-three open in browser type extensions.
-I've worked with this one before,
-open-in-browser, so I click "Install".
-And as you can see, that has installed.
-I need to reload my work space in
-order to have that extension be activated.
-So let's use this extension to see how we can open
-the HTML page I have in front of me into a browser.
-This extension has two commands.
-One is the Ctrl+Alt+O command,
-which allows you to select
-a browser in order to open this page in.
-I won't do that for now because
-the other ways open your default browser,
-which is Ctrl+K+D.
-And as you can see, that's opened a copy
-of Microsoft Edge because that's my default browser,
-and it's launched my page.
-If I now expand the explorer panel in my editor,
-I can right click on any HTML page,
-and now I have an open in default browser selection.
-So here, I'll open the images page just here.
-I'll open that just with a command inside Visual Studio.
-So with this extension,
-I remove the task of finding my file on
-disk and using the context menu to load it.
-I also don't have to remember addresses for files.
-So an extension like this is definitely a step forward.
-However, to view my changes,
-I still have to save my file
-and reload it in the browser manually.
-So if I type in "Hello Demo2!" and I save my file,
-you can see, there is still no change.
-I have to refresh my page here.
-The next level of HTML preview extension you can
-install is one that offers a live preview.
-A live preview of a HTML page is when your page is
-actually loaded into a local Web server
-running on your machine.
-And so the pages live,
-meaning any changes that you make to the page, also
-show up immediately on the page and in a browser.
-I'll show you how you can do that right now.
-So first of all,
-let's go back to "Extensions" panel.
-And here, I'm going to search for something like,
-"Live Preview", and let's see what comes up there.
-I'll just expand this a little bit.
-So these first few extensions look
-interesting here from a live preview perspective.
-The first one, "Live Server",
-will actually launch a development local server
-and load the page into it.
-So I'll try that one out. I'll just click install.
-And as you can see,
-it installs pretty fast. I like that run.
-So now that that's installed,
-I have to reload this workspace
-in order to activate that extension.
-So now we have our new live server extension in place.
-Down below, we see that there is a live server button
-called "Go Live" that this extension has installed.
-And if I click on that button,
-it will start a server port 5500. I'll Just close that.
-And over here on the browser,
-you can see it's actually launched that server at
-this particular address with my page that I have opened.
-So what does that mean to me? Well, it
-means that if I was to
-change my HTML text again,
-and I haven't saved if I do file, save.
-I'd just watch the browser on the left hand side.
-As soon as I hit "Save",
-the live server to text
-those changes and service the page to me again.
-So that was a quick roundup of some options to make
-your HTML preview experience
-better in Visual Studio Code.
+- A client (a browser) sends an HTTP request to the web
+- An web server receives the request
+- The server runs an application to process the request
+- The server returns an HTTP response (output) to the browser
+- The client (the browser) receives the response
+- The process is repeated as long as there are objects in the page that need to be requested from the server.
 
 ## Wireshark
 The basic tool for observing the messages exchanged between executing protocol entities is called a **packet sniffer**. As the name suggests, a packet sniffer passively copies ("sniffs") messages being sent from and received by your computer; it will also display the contents of the various protocol fields of these captured messages. For these labs, we'll use the **Wireshark** packet sniffer. Wireshark is a free/shareware packet sniffer that runs on Windows, Linux/Unix, and Mac computers. This lab will allow us to explore the HTTP protocol.
