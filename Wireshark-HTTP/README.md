@@ -193,26 +193,25 @@ By looking at the information in the HTTP GET and response messages, answer the 
 2.	What languages (if any) does your browser indicate that it can accept to the server?
 3.	What is the IP address of your computer?  Of the gaia.cs.umass.edu server?
 4.	What is the status code returned from the server to your browser?
-5.	Refresh the page. What is the HTTP status code and phrase returned from the server in response to this second HTTP GET?  Did the server explicitly return the contents of the file? 
-<!--
-2. The HTTP CONDITIONAL GET/response interaction
+5.  Write in the browser an invalid URL (to a page that you are sure does not exist). What is the code returned this time from the server?
+
+#### The HTTP CONDITIONAL GET/response interaction
 Recall from Section 2.2.5 of the text, that most web browsers perform object caching and thus perform a conditional GET when retrieving an HTTP object. Before performing the steps below, make sure your browser’s cache is empty. (To do this under Firefox, select Tools->Clear Recent History and check the Cache box, or for Internet Explorer, select Tools->Internet Options->Delete File; these actions will remove cached files from your browser’s cache.) Now do the following:
-•	Start up your web browser, and make sure your browser’s cache is cleared, as discussed above.
-•	Start up the Wireshark packet sniffer
-•	Enter the following URL into your browser
+1.	Start up your web browser, and make sure your browser’s cache is cleared, as discussed above.
+2.	Start up the Wireshark packet sniffer
+3.	Enter the following URL into your browser
 http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html
 Your browser should display a very simple five-line HTML file. 
-•	Quickly enter the same URL into your browser again (or simply select the refresh button on your browser)
-•	Stop Wireshark packet capture, and enter “http” in the display-filter-specification window, so that only captured HTTP messages will be displayed later in the packet-listing window.  
-•	(Note:  If you are unable to run Wireshark on a live network connection, you can use the http-ethereal-trace-2 packet trace to answer the questions below; see footnote 1. This trace file was gathered while performing the steps above on one of the author’s computers.) 
-Answer the following questions:
-8.	Inspect the contents of the first HTTP GET request from your browser to the server.  Do you see an “IF-MODIFIED-SINCE” line in the HTTP GET?
-9.	Inspect the contents of the server response. Did the server explicitly return the contents of the file?   How can you tell?
-10.	Now inspect the contents of the second HTTP GET request from your browser to the server.  Do you see an “IF-MODIFIED-SINCE:” line in the HTTP GET? If so, what information follows the “IF-MODIFIED-SINCE:” header?
-11.	What is the HTTP status code and phrase returned from the server in response to this second HTTP GET?  Did the server explicitly return the contents of the file?   Explain.
--->
-#### HTML Documents with Embedded Objects
+4.	Quickly enter the same URL into your browser again (or simply select the refresh button on your browser)
+5.	Stop Wireshark packet capture, and enter “http” in the display-filter-specification window, so that only captured HTTP messages will be displayed later in the packet-listing window.  
 
+Answer the following questions:
+1.	Inspect the contents of the first HTTP GET request from your browser to the server.  Do you see an “IF-MODIFIED-SINCE” line in the HTTP GET?
+2.	Inspect the contents of the server response. Did the server explicitly return the contents of the file?   How can you tell?
+3.	Now inspect the contents of the second HTTP GET request from your browser to the server.  Do you see an “IF-MODIFIED-SINCE:” line in the HTTP GET? If so, what information follows the “IF-MODIFIED-SINCE:” header?
+4.	What is the HTTP status code and phrase returned from the server in response to this second HTTP GET?  Did the server explicitly return the contents of the file?   Explain.
+
+#### HTML Documents with Embedded Objects
 Now we can look at what happens when your browser downloads a file with embedded objects, i.e., a file that includes other objects (in the example below, image files) that are stored on another server(s).
 
 Do the following:
