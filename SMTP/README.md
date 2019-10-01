@@ -1,5 +1,7 @@
 # Labs
-Lab exercises. Introduction to Information Technology. Networking. Based on *Supplement Material to the book Computer Networking: A Top-Down Approach, 7th ed., J.F. Kurose and K.W. Ross, https://www.w3schools.com/whatis/whatis_html.asp, Edx course HTML5 and CSS Fundamentals*
+Lab exercises in Networks.
+
+### 
 
 ### MAC Address
 How to find your interface MAC address:
