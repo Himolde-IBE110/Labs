@@ -186,7 +186,7 @@ The example  shows in the packet-listing window that two HTTP messages were capt
 
 (Note: You should ignore any HTTP GET and response for favicon.ico.  If you see a reference to this file, it is your browser automatically asking the server if it (the server) has a small icon file that should be displayed next to the displayed URL in your browser.  We’ll ignore references to this pesky file in this lab.).
 
-By looking at the information in the HTTP GET and response messages, answer the following questions.  When answering the following questions, you should print out the GET and response messages (see the introductory Wireshark lab for an explanation of how to do this) and indicate where in the message you’ve found the information that answers the following questions. When you hand in your assignment, annotate the output so that it’s clear where in the output you’re getting the information for your answer (e.g., for our classes, we ask that students markup paper copies with a pen, or annotate electronic copies with text in a colored font).
+By looking at the information in the HTTP GET and response messages, answer the following questions:
 1.	Is your browser running HTTP version 1.0 or 1.1?  What version of HTTP is the server running?
 2.	What languages (if any) does your browser indicate that it can accept to the server?
 3.	What is the IP address of your computer?  Of the gaia.cs.umass.edu server?
