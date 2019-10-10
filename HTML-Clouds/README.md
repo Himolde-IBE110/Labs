@@ -20,7 +20,7 @@ You have already created your first Web page in the Wireshark lab. In this lab y
 
 Open up a new tab and go to jsbin.com. Remember there is no need to login or register. 
 Open this page in your browser: https://himolde-ibe110.github.io/Labs/hello.html). Right click on that page and select **View page source**. This is the HTML code of your page. Copy it and paste it into the left panel of jsbin. 
-Now you have an initial code to 
+Now that you have an initial code, lets start.
 
 
 
