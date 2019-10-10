@@ -1,5 +1,6 @@
 # Lab Databases
 Lab exercises. Introduction to Information Technology. Databases. 
+
 This course of the Khan Academy teaches how to create your own database:
 https://www.khanacademy.org/computing/hour-of-code/hour-of-sql/pp/project-design-a-store-database
 
