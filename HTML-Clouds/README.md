@@ -1,4 +1,4 @@
-# Labs
+# Lab Web technologies and the Cloud
 Lab exercises. Introduction to Information Technology. Web technologies. 
 Based on https://www.w3schools.com/whatis/whatis_html.asp, Edx course HTML5 and CSS Fundamentals*, Khan Academy https://www.khanacademy.org/computing/hour-of-code/hour-of-html/pt/css-basics and https://aws.amazon.com/getting-started/tutorials/
 If you find this topic intersting, you can take the courses at https://aws.amazon.com/training/ 
