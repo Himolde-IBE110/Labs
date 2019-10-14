@@ -24,7 +24,7 @@ Now that you have an initial code, lets start.
 
 
 
-## Publishing your Web page in the Amazon Cloud
+## Publishing your Web page in the Cloud
 1. Search for amazon aws free account using your favorite search engine (https://duckduckgo.com/, google.com, ..)
 2. Click on the link AWS Free Tier - Amazon Web Services (AWS) https://aws.amazon.com/free/
 3. It takes us to the Free tier page on the Amazon AWS system and describes what you get with the Free Tier. Their idea is probably that  after gaining some free hands-on experience with the AWS platform, products, and services you like it and start paying for the services. You can click on Tier type below and/or Product categories to know more about this tier, or just click on the yellow button: Create a Free Account
