@@ -18,10 +18,11 @@ As you already know, the Web is an information system where resources are identi
 ## Improving my first Web page.
 You have already created your first Web page in the Wireshark lab. In this lab you are going to improve it a little. Remember that you can build and edit your HTML pages by either using online editors or editors that you can install on your machine like Visual Studio Code. In the demonstration we will use the JSBin online editor (https://jsbin.com/?html,output) 
 
-Open up a new tab and go to jsbin.com. Remember there is no need to login or register. 
-Open this page in your browser: https://himolde-ibe110.github.io/Labs/hello.html). Right click on that page and select **View page source**. This is the HTML code of your page. Copy it and paste it into the left panel of jsbin. 
+1. Open up a new tab and go to jsbin.com. Remember there is no need to login or register. 
+2. Open this page in your browser: https://himolde-ibe110.github.io/Labs/hello.html). Right click on that page and select **View page source**. This is the HTML code of your page. Copy it and paste it into the left panel of jsbin. 
 Now that you have an initial code, lets start.
-Write this code in jsbin:
+
+3. Modify the page using the style in this code:
 ```html
 <!DOCTYPE html>
 <html>
@@ -42,10 +43,10 @@ Write this code in jsbin:
     </body>
 </html>
 ```
-Change the look of the text inside the q tag. 
-Change the look of a paragraph. Remember that the tag is p.
+4. Change the look of the text inside the q tag. 
+5. Change the look of a paragraph. Remember that the tag is p.
 
-Uncomment the next lines and place them in the page:
+6. Uncomment the next lines and place them in the page:
 ```html
  <!--  <script type="text/javascript">
     document.write("<p>The date is " + Date() + "</p>");
@@ -66,7 +67,7 @@ Uncomment the next lines and place them in the page:
     }
   </script>-->
 ```
-Change the message so the page shows hours and minutes and am or pm according to the hour.
+7. Change the message so the page shows hours and minutes and am or pm according to the hour.
 Hint: Use let date = new Date(); let minutes = date.getMinutes(); and let hours = date.getHours();
 
 ## Publishing your Web page in the Cloud
