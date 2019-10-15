@@ -75,9 +75,9 @@ Prerequisites
 
 In order to deploy a site you need a couple of things:
 
-    Have git installed
-    Heroku Account – sign up here
-    Download the Heroku Toolbelt – a command line application for managing your Heroku account
+    Have git installed: https://www.atlassian.com/git/tutorials/install-git
+    Heroku Account – sign up here: https://signup.heroku.com/
+    Download the Heroku Toolbelt – a command line application for managing your Heroku account 
     Run heroku login in your terminal or command prompt and fill in your Heroku credentials
 
 ## Deploying Your Site
