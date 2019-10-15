@@ -75,20 +75,20 @@ Prerequisites
 
 In order to deploy a site you need a couple of things:
 
-    Have git installed: https://www.atlassian.com/git/tutorials/install-git
-    Heroku Account – sign up here: https://signup.heroku.com/
-    Download the Heroku Toolbelt – a command line application for managing your Heroku account http://devcenter.heroku.com/articles/heroku-cli
-    Run heroku login in your terminal or command prompt and fill in your Heroku credentials
+    1. The Heroku CLI requires Git, the popular version control system. If you don’t already have Git installed, complete the following before proceeding: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git You may want to attend the course https://classroom.udacity.com/courses/ud123 about Version control with Git.
+    2. First time using Git? https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+    3. Heroku Account – sign up here: https://signup.heroku.com/
+    4. Download the Heroku Toolbelt – a command line application for managing your Heroku account http://devcenter.heroku.com/articles/heroku-cli
 
 ## Deploying Your Site
 
-First, you need to navigate to your project in the command prompt. Ex.:
+1. First, you need to navigate to your project in the command prompt. Ex.:
 
 cd Projects/my-site
 
 If you’re happy with the state of your application – create an index.php file. Heroku has no support for deploying static web sites (only HTML-CSS) but we can trick Heroku to deploy a static site by including 1 dynamic file, a php file. PHP stands for "Hypertext Preprocessor", and is a scripting language that dynamic web pages: the PHP code is executed on the server, and the result is returned to the browser as plain HTML. You can click here https://www.w3schools.com/php/ to see some examples. 
 
-The index.php file will be served by Heroku before your index.html. We need to make the browser redirect from index.php to index.html. We only need to include one line of PHP code.
+2. The index.php file will be served by Heroku before your index.html. We need to make the browser redirect from index.php to index.html. We only need to include one line of PHP code.
 
 ```php
 <?php include_once("index.html");?>
@@ -97,16 +97,34 @@ You can do that in Linux with:
 ```bash
 echo '<?php include_once("index.html");?>' > index.php
 ```
-Pro Tip: Make sure there’s no spaces before the <?php or else it won’t work!
+Tip: Make sure there’s no spaces before the <?php or else it won’t work!
 
-Also, create a file composer.json with {} as content.  This file describes the dependencies of your project and may contain other metadata as well, we just want Heroku to be happy so we say we have no dependencies.
-
+3. Create a file composer.json with {} as content.  This file describes the dependencies of your project and may contain other metadata as well, we just want Heroku to be happy so we say we have no dependencies.
 ```bash
 echo '{}' > composer.json
 ```
+4. Run heroku --version to verify that heroku is installed
+5. Run heroku login in your terminal or command prompt and fill in your Heroku credentials
+6. In your project folder, execute 
+```bash
+git init 
+```
+to initialize your git repository
+7. and
+```bash
+git add . 
+```
+to add the working directory files to the staging area. It tells Git that you want to include updates to a particular file in the next commit.
+8. heroku app:create the-name-of-your-site-if-not-taken
+9. ```commit -m "First commit" ``` The changes are saved to the local repository
+10. To public your site you need to execute:
+```git push heroku master 
+```
+As the result you should have in your screen the message: "https://here-comes-your-site" deployed to Keroku. 
 
-This web site is published on the url https://my-static-test01.herokuapp.com/
+My test web site is published on the url https://my-static-test01.herokuapp.com/
 
+If you need help, please send to the Discussion a print of your screen showing the error. 
 
 
 
