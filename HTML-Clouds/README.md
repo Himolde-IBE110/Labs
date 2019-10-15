@@ -124,7 +124,8 @@ to add the working directory files to the staging area. It tells Git that you wa
 commit -m "First commit" 
 ``` 
 10. To public your site you need to execute:
-```git push heroku master 
+```
+git push heroku master 
 ```
 As the result you should have in your screen the message: "https://here-comes-your-site" deployed to Keroku. 
 
