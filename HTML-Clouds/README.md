@@ -22,7 +22,7 @@ Open up a new tab and go to jsbin.com. Remember there is no need to login or reg
 Open this page in your browser: https://himolde-ibe110.github.io/Labs/hello.html). Right click on that page and select **View page source**. This is the HTML code of your page. Copy it and paste it into the left panel of jsbin. 
 Now that you have an initial code, lets start.
 Write this code in jsbin:
-'''
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,11 +41,12 @@ Write this code in jsbin:
     <p>She looked over the top of her book and whispered <q>I'm hungry.</q> My heart stopped.</p>
     </body>
 </html>
-'''
+```
 Change the look of the text inside the q tag. 
 Change the look of a paragraph. Remember that the tag is p.
 
 Uncomment the next lines and place them in the page:
+```html
  <!--  <script type="text/javascript">
     document.write("<p>The date is " + Date() + "</p>");
 </script>
@@ -64,7 +65,7 @@ Uncomment the next lines and place them in the page:
       document.write("Good night!");
     }
   </script>-->
-
+```
 Change the message so the page shows hours and minutes and am or pm according to the hour.
 Hint: Use let date = new Date(); let minutes = date.getMinutes(); and let hours = date.getHours();
 
@@ -88,9 +89,9 @@ If you’re happy with the state of your application – create an index.php fil
 
 The index.php file will be served by Heroku before your index.html. We need to make the browser redirect from index.php to index.html. We only need to include one line of PHP code.
 
-'''php
+```php
 <?php header( 'Location: /index.html' ) ;  ?>
-'''
+```
 
 Pro Tip: Make sure there’s no spaces before the <?php or else it won’t work!
 
