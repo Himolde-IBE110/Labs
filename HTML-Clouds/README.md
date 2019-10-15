@@ -21,15 +21,80 @@ You have already created your first Web page in the Wireshark lab. In this lab y
 Open up a new tab and go to jsbin.com. Remember there is no need to login or register. 
 Open this page in your browser: https://himolde-ibe110.github.io/Labs/hello.html). Right click on that page and select **View page source**. This is the HTML code of your page. Copy it and paste it into the left panel of jsbin. 
 Now that you have an initial code, lets start.
+Write this code in jsbin:
+'''
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    q {
+      font-size: 12px;
+      line-height: 15px;
+      color: gray;
+    }
+    </style>
+</head>
+<body>
+    <p>She looked over the top of her book and whispered <q>I'm hungry.</q> My heart stopped.</p>
+    </body>
+</html>
+'''
+Change the look of the text inside the q tag. 
+Change the look of a paragraph. Remember that the tag is p.
 
+Uncomment the next lines and place them in the page:
+ <!--  <script type="text/javascript">
+    document.write("<p>The date is " + Date() + "</p>");
+</script>
+   
+ <script type="text/javascript">
+    d = new Date()
+    h = d.getHours()
+    if (h < 12) {
+      document.write("Good morning!");
+    }
+    else if (h > 12 && h < 20) {
+      document.write("Good afternoon!");
+    }
+    else
+    {
+      document.write("Good night!");
+    }
+  </script>-->
 
-
+Change the message so the page shows hours and minutes and am or pm according to the hour.
+Hint: Use let date = new Date(); let minutes = date.getMinutes(); and let hours = date.getHours();
 
 ## Publishing your Web page in the Cloud
-1. Search for amazon aws free account using your favorite search engine (https://duckduckgo.com/, google.com, ..)
-2. Click on the link AWS Free Tier - Amazon Web Services (AWS) https://aws.amazon.com/free/
-3. It takes us to the Free tier page on the Amazon AWS system and describes what you get with the Free Tier. Their idea is probably that  after gaining some free hands-on experience with the AWS platform, products, and services you like it and start paying for the services. You can click on Tier type below and/or Product categories to know more about this tier, or just click on the yellow button: Create a Free Account
-4. 
+Prerequisites
+
+In order to deploy a site you need a couple of things:
+
+    Have git installed
+    Heroku Account – sign up here
+    Download the Heroku Toolbelt – a command line application for managing your Heroku account
+    Run heroku login in your terminal or command prompt and fill in your Heroku credentials
+
+## Deploying Your Site
+
+First, you need to navigate to your project in the command prompt.
+
+cd Projects/my-site
+
+If you’re happy with the state of your application – create an index.php file. We can trick Heroku to deploy a static site by including 1 dynamic file.
+
+The index.php file will be served by Heroku before your index.html. We need to make the browser redirect from index.php to index.html. We only need to include one line of PHP code.
+
+'''php
+<?php header( 'Location: /index.html' ) ;  ?>
+'''
+
+Pro Tip: Make sure there’s no spaces before the <?php or else it won’t work!
+
+
 
 
 
