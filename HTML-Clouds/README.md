@@ -121,7 +121,7 @@ to add the working directory files to the staging area. It tells Git that you wa
 
 9. The changes are saved to the local repository
 ```git
-commit -m "First commit" 
+git commit -m "First commit" 
 ``` 
 10. To public your site you need to execute:
 ```
