@@ -82,19 +82,31 @@ In order to deploy a site you need a couple of things:
 
 ## Deploying Your Site
 
-First, you need to navigate to your project in the command prompt.
+First, you need to navigate to your project in the command prompt. Ex.:
 
 cd Projects/my-site
 
-If you’re happy with the state of your application – create an index.php file. We can trick Heroku to deploy a static site by including 1 dynamic file.
+If you’re happy with the state of your application – create an index.php file. Heroku has no support for deploying static web sites (only HTML-CSS) but we can trick Heroku to deploy a static site by including 1 dynamic file, a php file. PHP stands for "Hypertext Preprocessor", and is a scripting language that dynamic web pages: the PHP code is executed on the server, and the result is returned to the browser as plain HTML. You can click here https://www.w3schools.com/php/ to see some examples. 
 
 The index.php file will be served by Heroku before your index.html. We need to make the browser redirect from index.php to index.html. We only need to include one line of PHP code.
 
 ```php
-<?php header( 'Location: /index.html' ) ;  ?>
+<?php include_once("index.html");?>
+```
+You can do that in Linux with:
+```bash
+echo '<?php include_once("index.html");?>' > index.php
+```
+Pro Tip: Make sure there’s no spaces before the <?php or else it won’t work!
+
+Also, create a file composer.json with {} as content.  This file describes the dependencies of your project and may contain other metadata as well, we just want Heroku to be happy so we say we have no dependencies.
+
+```bash
+echo '{}' > composer.json
 ```
 
-Pro Tip: Make sure there’s no spaces before the <?php or else it won’t work!
+This web site is published on the url https://my-static-test01.herokuapp.com/
+
 
 
 
