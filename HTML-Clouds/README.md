@@ -110,13 +110,19 @@ echo '{}' > composer.json
 git init 
 ```
 to initialize your git repository
+
 7. and
 ```bash
 git add . 
 ```
 to add the working directory files to the staging area. It tells Git that you want to include updates to a particular file in the next commit.
+
 8. heroku app:create the-name-of-your-site-if-not-taken
-9. ```commit -m "First commit" ``` The changes are saved to the local repository
+
+9. The changes are saved to the local repository
+```git
+commit -m "First commit" 
+``` 
 10. To public your site you need to execute:
 ```git push heroku master 
 ```
