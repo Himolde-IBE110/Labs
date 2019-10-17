@@ -33,3 +33,6 @@ MongoDB Atlas https://www.youtube.com/watch?v=leNNivaQbDY
 
 https://docs.mongodb.com/manual/faq/fundamentals/#how-do-i-create-a-database-and-a-collection
 
+## Design a database
+
+https://www.khanacademy.org/computing/hour-of-code/hour-of-sql/pp/project-design-a-store-database
