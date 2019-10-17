@@ -22,14 +22,14 @@ The most widely used types of NoSQL databases are:
 <!--Gives an assessment of the types of workloads for which it is and is not well-suited.-->
 <!--Compares several of the specific products in the class, contrasting the things that are different between systems.-->
 
-### Document: MongoDB, CouchDB
-### Column family store: Hypertable. MariaDB, Apache HBase
-### Graph Databases: Neo4J, DEX, GraphBase, GraphChi
+### Document
+### Column family store
+### Graph Databases
 
 ## My first Relational database
 
 ## My first NoSQL database
-
+MongoDB Atlas https://www.youtube.com/watch?v=leNNivaQbDY
 
 
 
