@@ -67,6 +67,33 @@ Now that you have an initial code, lets start.
 7. Change the message so the page shows hours and minutes and am or pm according to the hour.
 Hint: Use let date = new Date(); let minutes = date.getMinutes(); and let hours = date.getHours();
 
+8. Links. How do we connect web pages so we can navigate through them? Hyperlinks are defined with the HTML <a> tag:
+ ```html
+<a href="url">link text</a>
+```
+Example
+```html
+<a href="https://www.w3schools.com/html/">Visit our HTML tutorial</a> 
+```
+Internal links, or links to elements in the same server can be specified  with a relative URL (without https://www....) instead of the absolute URL as in the last case (assuming there is such a page):
+```html
+ <a href="html_images.html">HTML Images</a> 
+```  
+
+The target attribute specifies where to open the linked document. It can have one of the following values:
+
+ *   _blank - Opens the linked document in a new window or tab
+ *   _self - Opens the linked document in the same window/tab as it was clicked (this is default)
+ *   _parent - Opens the linked document in the parent frame
+ *   _top - Opens the linked document in the full body of the window
+ *   framename - Opens the linked document in a named frame
+
+This example will open the linked document in a new browser window/tab:
+```html
+<a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a> 
+```
+You can read more about links here: https://www.w3schools.com/html/html_links.asp
+
 ## Publishing your Web page in the Cloud
 Prerequisites
 
@@ -76,6 +103,10 @@ In order to deploy a site you need a couple of things:
     2. First time using Git? https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
     3. Heroku Account – sign up here: https://signup.heroku.com/
     4. Download the Heroku Toolbelt – a command line application for managing your Heroku account http://devcenter.heroku.com/articles/heroku-cli
+    
+## Intro to git
+Git is a distributed version control system. You find a short guide to git here: https://rogerdudler.github.io/git-guide/
+However, learning git is a terrific investment, I really recommend you the course at https://classroom.udacity.com/courses/ud123 about Version control with Git.
 
 ## Deploying Your Site
 
