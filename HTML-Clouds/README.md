@@ -99,10 +99,10 @@ Prerequisites
 
 In order to deploy a site you need a couple of things:
 
-    1. The Heroku CLI requires Git, the popular version control system. If you don’t already have Git installed, complete the following before proceeding: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git You may want to attend the course https://classroom.udacity.com/courses/ud123 about Version control with Git.
-    2. First time using Git? https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
-    3. Heroku Account – sign up here: https://signup.heroku.com/
-    4. Download the Heroku Toolbelt – a command line application for managing your Heroku account http://devcenter.heroku.com/articles/heroku-cli
+ 1. The Heroku CLI requires Git, the popular version control system. If you don’t already have Git installed, complete the following before proceeding: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git You may want to attend the course https://classroom.udacity.com/courses/ud123 about Version control with Git.
+ 2. First time using Git? https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+ 3. Heroku Account – sign up here: https://signup.heroku.com/
+ 4. Download the Heroku Toolbelt – a command line application for managing your Heroku account http://devcenter.heroku.com/articles/heroku-cli
     
 ## Intro to git
 Git is a distributed version control system. You find a short guide to git here: https://rogerdudler.github.io/git-guide/
