@@ -31,5 +31,5 @@ The most widely used types of NoSQL databases are:
 ## My first NoSQL database
 MongoDB Atlas https://www.youtube.com/watch?v=leNNivaQbDY
 
-
+https://docs.mongodb.com/manual/faq/fundamentals/#how-do-i-create-a-database-and-a-collection
 
