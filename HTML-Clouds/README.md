@@ -19,6 +19,8 @@ You have already created your first Web page in the Wireshark lab. In this lab y
 2. Open this page in your browser: https://himolde-ibe110.github.io/Labs/hello.html). Right click on that page and select **View page source**. This is the HTML code of your page. Copy it and paste it into the left panel of jsbin. 
 Now that you have an initial code, lets start.
 
+*It is very difficult to find your errors while programming in Javascript, the page just ignores your code. There is one useful ally, that is the console. In the Chrome browser, choose Developer Tools/Console. There you will find your errors and the messages that are printed when you use the command console.log().
+
 3. Modify the page using the style in this code:
 ```html
 <!DOCTYPE html>
@@ -114,8 +116,8 @@ However, learning git is a terrific investment, I really recommend you the cours
 
 cd Projects/my-site
 
-(First time with the command prompt? You have a cheat sheet here: https://gist.github.com/poopsplat/7195274
-Alternatively, in Mac you can create your folder in Finder, and go from there to the command prompt. Just right click over your just created folder and choose "New Terminal at folder". A new Terminal will open where you will be positioned in the folder that you just created. Now you can continue with the lab. :-)
+*First time with the command prompt? You have a cheat sheet here: https://gist.github.com/poopsplat/7195274
+Alternatively, in Mac you can create your folder in Finder, and go from there to the command prompt. Just right click over your just created folder and choose "New Terminal at folder". A new Terminal will open where you will be positioned in the folder that you just created. Now you can continue with the lab. :-) 
 
 If you’re happy with the state of your application – create an **index.php** file. Heroku has no support for deploying static web sites (only HTML-CSS) but we can trick Heroku to deploy a static site by including 1 dynamic file, a php file. PHP stands for "Hypertext Preprocessor", and is a scripting language that dynamic web pages: the PHP code is executed on the server, and the result is returned to the browser as plain HTML. You can click here https://www.w3schools.com/php/ to see some examples. 
 
