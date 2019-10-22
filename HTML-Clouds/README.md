@@ -1,7 +1,7 @@
 # Lab Web technologies and the Cloud
 Lab exercises. Introduction to Information Technology. Web technologies. 
 Based on https://www.w3schools.com/whatis/whatis_html.asp, Edx course HTML5 and CSS Fundamentals*, Khan Academy https://www.khanacademy.org/computing/hour-of-code/hour-of-html/pt/css-basics and https://aws.amazon.com/getting-started/tutorials/
-If you find this topic intersting, you can take the courses at https://aws.amazon.com/training/ 
+If you find this topic interesting, you can take the courses at https://aws.amazon.com/training/ 
 
 The school library provides several books as online resources. You can access them through the library databases link: https://www.himolde.no/bibliotek/english/databases/ in the Database Ebook Central ProQuest - E-books in full text. 
 
@@ -114,7 +114,10 @@ However, learning git is a terrific investment, I really recommend you the cours
 
 cd Projects/my-site
 
-If you’re happy with the state of your application – create an index.php file. Heroku has no support for deploying static web sites (only HTML-CSS) but we can trick Heroku to deploy a static site by including 1 dynamic file, a php file. PHP stands for "Hypertext Preprocessor", and is a scripting language that dynamic web pages: the PHP code is executed on the server, and the result is returned to the browser as plain HTML. You can click here https://www.w3schools.com/php/ to see some examples. 
+(First time with the command prompt? You have a cheat sheet here: https://gist.github.com/poopsplat/7195274
+Alternatively, in Mac you can create your folder in Finder, and go from there to the command prompt. Just right click over your just created folder and choose "New Terminal at folder". A new Terminal will open where you will be positioned in the folder that you just created. Now you can continue with the lab. :-)
+
+If you’re happy with the state of your application – create an **index.php** file. Heroku has no support for deploying static web sites (only HTML-CSS) but we can trick Heroku to deploy a static site by including 1 dynamic file, a php file. PHP stands for "Hypertext Preprocessor", and is a scripting language that dynamic web pages: the PHP code is executed on the server, and the result is returned to the browser as plain HTML. You can click here https://www.w3schools.com/php/ to see some examples. 
 
 2. The index.php file will be served by Heroku before your index.html. We need to make the browser redirect from index.php to index.html. We only need to include one line of PHP code.
 
