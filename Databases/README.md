@@ -8,31 +8,34 @@ The school library provides several books as online resources. You can access th
 
 We are not going to delve into the details of Database design because you are going to have a course in Databases on the next semester. In this class we will show you what you can do with databases. At the end of this class you will be able to create a simple database and use it in your project.
 
-Objective: This is a hands-on lab on Databases
+Objective: This is a hands-on lab on Databases. We will use the playgrounds in:
+https://www.khanacademy.org/computer-programming/spin-off-of-project-design-a-store-database/
+for a relational database and:
+https://docs.mongodb.com/manual/tutorial/query-documents/
+for MongoDB (a NoSQL database).
 
-#NoSQL databases:
+## My first Relational database
+Let's start creating a table in our playground using SQL.
+https://www.khanacademy.org/computing/hour-of-code/hour-of-sql/pp/project-design-a-store-database
+
+
+## NoSQL databases:
 The most widely used types of NoSQL databases are:
 - Key-Value pair: DynamoDB, LevelDB, Riak, Tokyo/Kyoto Cabinet, Oracle NoSQL DB
 - Document: MongoDB, CouchDB
 - Column family store: Hypertable. MariaDB, Apache HBase
 - Graph Databases: Neo4J, DEX, GraphBase, GraphChi
 
-Lets play with the Amazon's database: DynamoDB. DynamoDB is a key-value pair NoSQL database
-https://www.qwiklabs.com/focuses/7781?parent=catalog
+Lets play with the MongoDB database. MongoDB is a document-based NoSQL database.
 
 <!--### Key-Value pair databases
 Introduction to the technology: explain the data model (what makes all the systems in the class similar)-->
 <!--Gives an assessment of the types of workloads for which it is and is not well-suited.-->
 <!--Compares several of the specific products in the class, contrasting the things that are different between systems.-->
 
-## My first Relational database
-Now let's create a similar data storage in our playground using SQL.
-
-<!--MongoDB Atlas https://www.youtube.com/watch?v=leNNivaQbDY
+!--MongoDB Atlas https://www.youtube.com/watch?v=leNNivaQbDY
 https://docs.mongodb.com/manual/faq/fundamentals/#how-do-i-create-a-database-and-a-collection
-## Design a database-->
-
-https://www.khanacademy.org/computing/hour-of-code/hour-of-sql/pp/project-design-a-store-database
+Design a database-->
 
 --------------
 
