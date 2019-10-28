@@ -121,7 +121,7 @@ Alternatively, in Mac you can create your folder in Finder, and go from there to
 
 If you’re happy with the state of your application – create an **index.php** file. Heroku has no support for deploying static web sites (only HTML-CSS) but we can trick Heroku to deploy a static site by including 1 dynamic file, a php file. PHP stands for "Hypertext Preprocessor", and is a scripting language that dynamic web pages: the PHP code is executed on the server, and the result is returned to the browser as plain HTML. You can click here https://www.w3schools.com/php/ to see some examples. 
 
-2. The index.php file will be served by Heroku before your index.html. We need to make the browser redirect from index.php to index.html. We only need to include one line of PHP code.
+2. The **index.php** file will be served by Heroku before your index.html. We need to make the browser redirect from index.php to index.html. We only need to include one line of PHP code. The name of the file **MUST BE index.php**.
 
 ```php
 <?php include_once("index.html");?>
