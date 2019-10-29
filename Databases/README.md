@@ -16,8 +16,45 @@ for MongoDB (a NoSQL database).
 
 ## My first Relational database
 Let's start creating a table in our playground using SQL.
-https://www.khanacademy.org/computing/hour-of-code/hour-of-sql/pp/project-design-a-store-database
 
+Creating a table and inserting data:
+https://www.khanacademy.org/computing/computer-programming/sql/sql-basics/pc/challenge-book-list-database
+
+Querying the table:
+https://www.khanacademy.org/computing/computer-programming/sql/sql-basics/pc/challenge-box-office-hits-database
+
+Agregating data:
+https://www.khanacademy.org/computing/computer-programming/sql/sql-basics/pt/aggregating-data
+
+Safer SQL:
+https://www.khanacademy.org/computing/computer-programming/sql/modifying-databases-with-sql/pc/challenge-dynamic-documents
+```sql
+CREATE table documents (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    content TEXT,
+    author TEXT);
+    
+INSERT INTO documents (author, title, content)
+    VALUES ("Puff T.M. Dragon", "Fancy Stuff", "Ceiling wax, dragon wings, etc.");
+INSERT INTO documents (author, title, content)
+    VALUES ("Puff T.M. Dragon", "Living Things", "They're located in the left ear, you know.");
+INSERT INTO documents (author, title, content)
+    VALUES ("Jackie Paper", "Pirate Recipes", "Cherry pie, apple pie, blueberry pie.");
+INSERT INTO documents (author, title, content)
+    VALUES ("Jackie Paper", "Boat Supplies", "Rudder - guitar. Main mast - bed post.");
+INSERT INTO documents (author, title, content)
+    VALUES ("Jackie Paper", "Things I'm Afraid Of", "Talking to my parents, the sea, giant pirates, heights.");
+
+SELECT * FROM documents;
+
+BEGIN TRANSACTION;
+    UPDATE documents SET author = "Jackie Draper"
+    WHERE author="Jackie Paper";
+COMMIT;
+
+SELECT * FROM documents;
+```
 
 ## NoSQL databases:
 The most widely used types of NoSQL databases are:
@@ -27,6 +64,12 @@ The most widely used types of NoSQL databases are:
 - Graph Databases: Neo4J, DEX, GraphBase, GraphChi
 
 Lets play with the MongoDB database. MongoDB is a document-based NoSQL database.
+
+https://docs.mongodb.com/manual/tutorial/query-documents/
+
+Let's go for something more interesting:
+
+https://dduril.github.io/ucscx-data-analytics/nosql-databases/lab-3b.html
 
 <!--### Key-Value pair databases
 Introduction to the technology: explain the data model (what makes all the systems in the class similar)-->
