@@ -26,6 +26,24 @@ https://www.khanacademy.org/computing/computer-programming/sql/sql-basics/pc/cha
 Agregating data:
 https://www.khanacademy.org/computing/computer-programming/sql/sql-basics/pt/aggregating-data
 
+Linking tables (foreign key):
+```sql
+CREATE TABLE items (id INTEGER PRIMARY KEY, name TEXT, price REAL DEFAULT 10);
+
+INSERT INTO items (id, name) VALUES (1, "bici");
+INSERT INTO items (id, name, price) VALUES (2, "patin",5);
+INSERT INTO items (id, name) VALUES (3, "carro");
+
+CREATE TABLE sold (
+    id INTEGER,
+    amount INTEGER DEFAULT 1,
+    FOREIGN KEY(id) REFERENCES items(id));
+
+INSERT INTO sold (id, amount) VALUES (3, 4);
+
+SELECT * FROM items, sold WHERE items.id = sold.id
+```
+
 Safer SQL:
 https://www.khanacademy.org/computing/computer-programming/sql/modifying-databases-with-sql/pc/challenge-dynamic-documents
 ```sql
