@@ -154,7 +154,7 @@ to add the working directory files to the staging area. It tells Git that you wa
 8. Create your application in heroku. That will be the name of your site, as
 ```bash
 heroku apps:create the-name-of-your-site-if-not-taken
-
+```
 
 9. The changes are saved to the local repository
 ```git
