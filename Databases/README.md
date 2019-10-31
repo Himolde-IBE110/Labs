@@ -81,8 +81,9 @@ The most widely used types of NoSQL databases are:
 - Column family store: Hypertable. MariaDB, Apache HBase
 - Graph Databases: Neo4J, DEX, GraphBase, GraphChi
 
-Lets play with the MongoDB database. MongoDB is a document-based NoSQL database. It can be compared with SQL 
-
+Lets play with the MongoDB database. MongoDB is a document-based NoSQL database. It can be compared with SQL as shown in the figure:
+![Comparing SQL and MongoDB Terms](./mongoDBcompared.png) (from https://www.freecodecamp.org/news/learn-mongodb-a4ce205e7739/
+)
 
 
 http://www.dba86.com/docs/mongo/2.4/installation.html
