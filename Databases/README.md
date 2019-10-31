@@ -143,6 +143,8 @@ If you want to see points in the map using the json format, you might want to us
 and this guide:
 http://tugdualgrall.blogspot.com/2014/08/introduction-to-mongodb-geospatial.html
 
+<!--https://docs.mongodb.com/manual/tutorial/geospatial-tutorial/-->
+
 <!--### Key-Value pair databases
 Introduction to the technology: explain the data model (what makes all the systems in the class similar)-->
 <!--Gives an assessment of the types of workloads for which it is and is not well-suited.-->
