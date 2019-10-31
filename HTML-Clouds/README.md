@@ -131,13 +131,14 @@ You can do that in Linux with:
 echo '<?php include_once("index.html");?>' > index.php
 ```
 Tip: Make sure there’s no spaces before the <?php or else it won’t work!
+Or you can take it from here: https://github.com/Himolde-IBE110/Labs/tree/master/HTML-Clouds/code
+Note that your first page must be index.html.
 
-3. Create a file composer.json with {} as content.  This file describes the dependencies of your project and may contain other metadata as well, we just want Heroku to be happy so we say we have no dependencies.
-```bash
-echo '{}' > composer.json
-```
-4. Run heroku --version to verify that heroku is installed
-5. Run heroku login in your terminal or command prompt and fill in your Heroku credentials
+3. Create a file composer.json with {} as content.  This file describes the dependencies of your project and may contain other metadata as well, we just want Heroku to be happy so we say we have no dependencies. You can take it from here: 
+https://github.com/Himolde-IBE110/Labs/tree/master/HTML-Clouds/code
+
+4. Run **heroku --version** to verify that heroku is installed
+5. Run **heroku login** in your terminal or command prompt and fill in your Heroku credentials
 6. In your project folder, execute 
 ```bash
 git init 
@@ -150,7 +151,8 @@ git add .
 ```
 to add the working directory files to the staging area. It tells Git that you want to include updates to a particular file in the next commit.
 
-8. heroku apps:create the-name-of-your-site-if-not-taken
+8. Create your application in jeroku. That will be the name of your site, as
+**heroku apps:create the-name-of-your-site-if-not-taken**
 
 9. The changes are saved to the local repository
 ```git
@@ -160,7 +162,7 @@ git commit -m "First commit"
 ```
 git push heroku master 
 ```
-As the result you should have in your screen the message: "https://here-comes-your-site" deployed to Keroku. 
+As the result you should have in your screen the message: "https://here-comes-your-site.herokuapp.com" deployed to Keroku. 
 
 My test web site is published on the url https://my-static-test01.herokuapp.com/
 
