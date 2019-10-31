@@ -108,10 +108,15 @@ db.myinventory.insertMany([
 Let's go for something more interesting. In order to install MongoDB you can go through the steps in:
 http://www.dba86.com/docs/mongo/2.4/installation.html
 In the Mac you can install it from here:
+```bash
 curl -O http://downloads.mongodb.org/osx/mongodb-osx-x86_64-2.4.14.tgz
+```
 
 untar as:
+
+```
 tar xvf nameofthefile.tar
+```
 
 then: 
 cd nameofthefolder
@@ -141,7 +146,7 @@ Introduction to the technology: explain the data model (what makes all the syste
 <!--Gives an assessment of the types of workloads for which it is and is not well-suited.-->
 <!--Compares several of the specific products in the class, contrasting the things that are different between systems.-->
 
-!--MongoDB Atlas https://www.youtube.com/watch?v=leNNivaQbDY
+<!--MongoDB Atlas https://www.youtube.com/watch?v=leNNivaQbDY
 https://docs.mongodb.com/manual/faq/fundamentals/#how-do-i-create-a-database-and-a-collection
 Design a database-->
 
