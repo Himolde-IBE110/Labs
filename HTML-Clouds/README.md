@@ -165,7 +165,7 @@ git commit -m "First commit"
 ```
 git push heroku master 
 ```
-As the result you should have in your screen the message: "https://here-comes-your-site.herokuapp.com" deployed to Keroku. 
+As the result you should have in your screen the message: "https://here-comes-your-site.herokuapp.com" deployed to Heroku. 
 
 My test web site is published on the url https://my-static-test01.herokuapp.com/
 
