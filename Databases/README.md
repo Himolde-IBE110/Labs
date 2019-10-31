@@ -103,6 +103,8 @@ db.myinventory.insertMany([
 3. Retrieve all the documents in the collection
 4. Retrieve ll the documents with a particular field value
 
+Now you can answer the questions in the Quiz: LabDatabases
+
 ## Optional. Geospatial databases.
 
 Let's go for something more interesting. In order to install MongoDB you can go through the steps in:
