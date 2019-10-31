@@ -81,19 +81,58 @@ The most widely used types of NoSQL databases are:
 - Column family store: Hypertable. MariaDB, Apache HBase
 - Graph Databases: Neo4J, DEX, GraphBase, GraphChi
 
-Lets play with the MongoDB database. MongoDB is a document-based NoSQL database. It can be compared with SQL as shown in the figure:
+Lets play with the MongoDB database. MongoDB is a document-based NoSQL database. It can be related to SQL as shown in the figure:
 ![Comparing SQL and MongoDB Terms](./mongoDBcompared.png) (from https://www.freecodecamp.org/news/learn-mongodb-a4ce205e7739/
 )
 
-
-http://www.dba86.com/docs/mongo/2.4/installation.html
-
+You may use the playground available here:
 https://docs.mongodb.com/manual/tutorial/query-documents/
 
-Let's go for something more interesting:
+### Tasks:
+1. Create a new database inventory (use inventory)
+2. Insert a new collection myinventory into inventory with the following documents (you may change them as you like):
+```mongodb
+db.myinventory.insertMany([
+   { item: "journal", qty: 25, size: { h: 14, w: 21, uom: "cm" }, status: "A" },
+   { item: "notebook", qty: 50, size: { h: 8.5, w: 11, uom: "in" }, status: "A" },
+   { item: "paper", qty: 100, size: { h: 8.5, w: 11, uom: "in" }, status: "D" },
+   { item: "planner", qty: 75, size: { h: 22.85, w: 30, uom: "cm" }, status: "D" },
+   { item: "postcard", qty: 45, size: { h: 10, w: 15.25, uom: "cm" }, status: "A" }
+]);
+```
+3. Retrieve all the documents in the collection
+4. Retrieve ll the documents with a particular field value
 
-https://dduril.github.io/ucscx-data-analytics/nosql-databases/lab-3b.html
+Let's go for something more interesting. In order to install MongoDB you can go through the steps in:
+http://www.dba86.com/docs/mongo/2.4/installation.html
+In the Mac you can install it from here:
+curl -O http://downloads.mongodb.org/osx/mongodb-osx-x86_64-2.4.14.tgz
 
+untar as:
+tar xvf nameofthefile.tar
+
+then: 
+cd nameofthefolder
+cd bin
+
+There execute the daemon:
+mkdir data
+./mongodbd --dbpath data & 
+and the mongo executable
+./mongo
+
+Download this file: (US zip code data set)
+https://media.mongodb.org/zips.json
+
+**JavaScript Object Notation (JSON) is an open-standard language-independent data format that uses human-readable text to transmit data objects consisting of attribute–value pairs and other serializable values.**
+
+Now you can follow these steps: https://docs.mongodb.com/manual/tutorial/aggregation-zip-code-data-set/
+
+<!--https://dduril.github.io/ucscx-data-analytics/nosql-databases/lab-3b.html-->
+
+If you want to see points in the map using the json format, you might want to use this tool: http://geojsonlint.com/
+and this guide:
+http://tugdualgrall.blogspot.com/2014/08/introduction-to-mongodb-geospatial.html
 
 <!--### Key-Value pair databases
 Introduction to the technology: explain the data model (what makes all the systems in the class similar)-->
