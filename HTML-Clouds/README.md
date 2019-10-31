@@ -150,7 +150,7 @@ git add .
 ```
 to add the working directory files to the staging area. It tells Git that you want to include updates to a particular file in the next commit.
 
-8. heroku app:create the-name-of-your-site-if-not-taken
+8. heroku apps:create the-name-of-your-site-if-not-taken
 
 9. The changes are saved to the local repository
 ```git
