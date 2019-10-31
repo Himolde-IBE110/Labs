@@ -151,10 +151,11 @@ git add .
 ```
 to add the working directory files to the staging area. It tells Git that you want to include updates to a particular file in the next commit.
 
-8. Create your application in heroku. That will be the name of your site, as
+8. Choose a name for your site. Create your application in heroku. as
 ```bash
 heroku apps:create the-name-of-your-site-if-not-taken
 ```
+if the name is taken, choose another and try again.
 
 9. The changes are saved to the local repository
 ```git
