@@ -2,7 +2,7 @@
 Lab exercises. Introduction to Information Technology. Databases. Based on Sullivan, Dan. NoSQL for mere mortals. 
 
 This course of the Khan Academy teaches how to create your own database:
-https://www.khanacademy.org/computing/hour-of-code/hour-of-sql/pp/project-design-a-store-database
+https://www.khanacademy.org/computing/hour-of-code/hour-of-sql
 
 The school library provides several books as online resources. You can access them through the library databases link: https://www.himolde.no/bibliotek/english/databases/ in the Database Ebook Central ProQuest - E-books in full text. 
 
@@ -24,7 +24,7 @@ Querying the table:
 https://www.khanacademy.org/computing/computer-programming/sql/sql-basics/pc/challenge-box-office-hits-database
 
 Agregating data:
-https://www.khanacademy.org/computing/computer-programming/sql/sql-basics/pt/aggregating-data
+https://www.khanacademy.org/computing/hour-of-code/hour-of-sql/pp/project-design-a-store-database
 
 Linking tables (foreign key):
 ```sql
@@ -103,13 +103,22 @@ db.myinventory.insertMany([
 3. Retrieve all the documents in the collection
 4. Retrieve ll the documents with a particular field value
 
+Now you can answer the questions in the Quiz: LabDatabases
+
+## Optional. Geospatial databases.
+
 Let's go for something more interesting. In order to install MongoDB you can go through the steps in:
 http://www.dba86.com/docs/mongo/2.4/installation.html
 In the Mac you can install it from here:
+```bash
 curl -O http://downloads.mongodb.org/osx/mongodb-osx-x86_64-2.4.14.tgz
+```
 
 untar as:
+
+```
 tar xvf nameofthefile.tar
+```
 
 then: 
 cd nameofthefolder
@@ -134,12 +143,14 @@ If you want to see points in the map using the json format, you might want to us
 and this guide:
 http://tugdualgrall.blogspot.com/2014/08/introduction-to-mongodb-geospatial.html
 
+<!--https://docs.mongodb.com/manual/tutorial/geospatial-tutorial/-->
+
 <!--### Key-Value pair databases
 Introduction to the technology: explain the data model (what makes all the systems in the class similar)-->
 <!--Gives an assessment of the types of workloads for which it is and is not well-suited.-->
 <!--Compares several of the specific products in the class, contrasting the things that are different between systems.-->
 
-!--MongoDB Atlas https://www.youtube.com/watch?v=leNNivaQbDY
+<!--MongoDB Atlas https://www.youtube.com/watch?v=leNNivaQbDY
 https://docs.mongodb.com/manual/faq/fundamentals/#how-do-i-create-a-database-and-a-collection
 Design a database-->
 
