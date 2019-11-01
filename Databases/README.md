@@ -2,7 +2,7 @@
 Lab exercises. Introduction to Information Technology. Databases. Based on Sullivan, Dan. NoSQL for mere mortals. 
 
 This course of the Khan Academy teaches how to create your own database:
-https://www.khanacademy.org/computing/hour-of-code/hour-of-sql/pp/project-design-a-store-database
+https://www.khanacademy.org/computing/hour-of-code/hour-of-sql
 
 The school library provides several books as online resources. You can access them through the library databases link: https://www.himolde.no/bibliotek/english/databases/ in the Database Ebook Central ProQuest - E-books in full text. 
 
@@ -24,7 +24,7 @@ Querying the table:
 https://www.khanacademy.org/computing/computer-programming/sql/sql-basics/pc/challenge-box-office-hits-database
 
 Agregating data:
-https://www.khanacademy.org/computing/computer-programming/sql/sql-basics/pt/aggregating-data
+https://www.khanacademy.org/computing/hour-of-code/hour-of-sql/pp/project-design-a-store-database
 
 Linking tables (foreign key):
 ```sql
