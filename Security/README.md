@@ -1,4 +1,95 @@
 ## Security:
+
+SSL:
+
+
+Uma função de dispersão criptográfica ou função hash criptográfica  (cryptographic hash function, https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_hash_criptogr%C3%A1fica) mapeia uma entrada (mensagem) de tamanho arbitrário para uma string de bits de tamanho fixo, chamado de hash digest ou resumo. Uma função de dispersão criptográfica deve ser: 
+(1) unidirecional: é impossível recuperar uma mensagem dado um hash, exceto se se testam todas as mensagens possíveis;
+(2) determinística: uma mesma entrada sempre gera a mesma saída;
+(3) numericamente instável: uma pequena mudança na entrada gera uma mudança drástica na saída;
+(4) sem colisões: dada a diferença de tamanho entre a entrada e saída duas mensagens diferentes podem produzir uma colisão, mas encontrar tal colisão deve ser computacionalmente inviável.
+
+Questão 1: experimente na prática a validade dessas propriedades no algoritmo SHA256. Para isto, pode usar o site https://anders.com/blockchain/hash.html
+Repare também que a saída do hash nessa função tem sempre 256 bits.
+Exemplo: MD5
+RFC 1321: The MD5 message-digest algorithm: 
+The algorithm takes as input a message of arbitrary length and produces as output a 128-bit "fingerprint" or "message digest" of the input. It is conjectured that it is computationally infeasible to produce    two messages having the same message digest, or to produce any    message having a given prespecified target message digest.    (https://tools.ietf.org/html/rfc1321)
+Nesse trabalho estaremos usando os algoritmos MD5, SHA e SHA256 implementados no Python Cryptography Toolkit (Package Crypto): coleção de módulos de criptografia que implementam várias funções e algoritmos. 
+Documentação: https://pypi.python.org/pypi/pycrypto/2.6. Python: http://docs.python-guide.org/en/latest/scenarios/crypto/
+
+Questão 2: Gere um hash MD5, SHA, SHA256 de uma palavra gerada por get_word() from dict.py. Verifique se o tamanho da saída é consistente com o esperado segundo o algoritmo (veja a documentação). Repita o procedimento para uma sentença gerada com  get_sentence(). (Observe que a saída é hexadecimal)
+
+Questão 3: (Rainbow Tables) Inspecione o arquivo dump_22_11_2013.db e tente determinar, consultando esta tabela:
+função de hash – tamanho da saída
+	MD5        --         128 bits
+	SHA	     -- 	      160 bits
+	SHA256  -- 	       256 bits
+qual função Hash foi usada dentre MD5, SHA e SHA256. 
+Tente reverter os hashes dos secrets no arquivo  dump_22_11_2013.db. (Dica: use força bruta e o dict/words como dicionário)
+Agora tente reverter os hashes dos passwords. Conseguiu? Precisa acrescentar o salt! Nesse caso, os salts são representações de inteiros como strings. Use o campo length para determinar qual função hash foi utilizada. Então, compute os passwords  por força bruta usando o salt correspondente e o dicionário dict/words do arquivo. 
+
+ Uma forma de evitar tabelas pré-computadas é utilizar o mecanismo de
+salting. Uma das características dos algoritmos de hashing é que eles são numericamente instáveis: uma pequena mudança na entrada gera uma
+mudança drástica na saída. No salting se adiciona uma string (salt)
+como prefixo da mensagem antes de computar o hash. 
+
+Questão 4: Tente usar o CrackStation.net ou o HashKiller.co.uk para reverter os hashes dos passwords e os secrets no arquivo  dump_22_11_2013.db. Comprove seus resultados na questão anterior.
+
+Funções hash funcionam bem para aplicações de autenticação porque são unidirecionais, tornando a mensagem ininteligível. Para  aplicações bidirecionais (como troca de mensagens) em que é  desejável recuperar a mensagem em seu formato original, são comumente usados algoritmos de criptografia – ou ciphers. A criptografia é utilizada para evitar que o conteúdo de mensagens interceptadas durante uma comunicação possa ser entendido por entidades não autorizadas. Para isso, as duas entidades envolvidas na comunicação usam informações adicionais (chaves) que permitem  criptografar e descriptografar mensagens. Algoritmos de criptografia podem ser simétricos, nos quais a chave de criptografia
+é igual a de descriptografia, ou assimétricos caso contrário. Em algoritmos block-level, as mensagens são processadas em blocos, enquanto em algoritmos stream,   as operações são feitas byte a byte. 
+
+Algoritmos De Criptografia Simétrica
+Questão 5: xor.py é um exemplo de utilização de um algoritmo de criptografia simétrica que utiliza a cifra XOR  (stream cipher, https://pt.wikipedia.org/wiki/Cifra_de_fluxo): a mensagem é processada aplicando uma operação XOR a cada caractere da mensagem com o caractere correspondente da chave. A criptografia nesse caso é simêtrica: a chave que criptografa a mensagem é a mesma que irá a descriptografar. As propriedades de simetria e de auto-inversão são satisfeitas: a XOR b = b XOR a.
+Analise o código em xor.py e determine o quê acontece se a mensagem for maior que a chave. Então, observe os primeiros 3 bytes da mensagem criptografada de exemplo. Você pode explicar este comportamento?
+Finalmente, use as propriedades do XOR para recuperar a mensagem. 
+
+O algoritmo RSA é um algoritmo de criptografia assimétrica. A também chamada de criptografia de chave pública usa duas chaves separadas:  uma pública para criptografar e uma privada para  descriptografar. Qualquer um em posse da chave pública pode criptografar uma mensagem que somente o dono da chave provada pode ler. RSA foi o primeiro algoritmo que demonstrou esse conceito. Os seus pressupostos de segurança baseiam-se na teoria da complexidade: calcular o produto de dois números primos é fácil (tempo polinomial), mas não existe um algoritmo eficiente para fatorá-los de volta (até agora, todos os métodos de factorização estão na classe não polinomial).
+As chaves para o algoritmo RSA são geradas da seguinte maneira:
+1. Escolha dois números primos grandes aleatórios diferentes p e q (da ordem de 10100 no mínimo)
+2. Calcule n = p * q
+n é o módulo da chave pública e as chaves privadas
+3. Calcule o totiente: phi (n) = (p-1)(q-1).
+4. Escolha um número inteiro e tal que 1 <e <phi (n) e e seja coprimo de phi (n)
+e será o expoente de chave pública
+5. Calcule d para satisfazer a relação de congruência d * e ≡ 1 (mod (phi (n)))
+d será o expoente da chave privada
+A chave pública é gerada do módulo n e do expoente público e.
+A chave privada é gerada do módulo n e do expoente privado d ,  que deve ser mantido em segredo.
+Criptografar uma mensagem: c = m ^ e (mod n)
+Descriptografar uma mensagem: m = c ^ d (mod n) 
+Exemplo:  
+p = 29, q = 31
+n = p *  q = 29 * 31 = 899
+phi = (p -1) * (q – 1) = (29 – 1) * (31 – 1) = 840
+e = 11
+d * e ≡ 1 mod phi => (d * 11) / phi  nos dará resto 1.
+(611 * 11) = 6721 and 6721 / 840 = 8 com resto 1 => d = 611
+C = M^e mod n
+C = 119^11 mod 899 = 595
+M = C^d mod n
+M = 595^611 mod 899 = 119 (Mais informação em https://pt.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/rsa-encryption-part-4)
+Questão 6.   Um fabricante de cartões inteligentes (smartcards) usa RSA para criptografar a comunicação com o dispositivo host. Durante os testes beta, descobriu-se a seguinte vulnerabilidade: na reinicialização ou na inicialização, todos os dispositivos inicializam o gerador de números aleatórios (Random  Number  Generator, RNG)  com o mesmo valor de semente. Portanto, se o par de chaves RSA for gerado imediatamente após a reposição, então seria idêntico em todos os dispositivos da marca. Em uma nova revisão, a seguinte correção foi aplicada:
+
+ 
+function (p,q) = init_RSA()
+    p = generatePrime()
+    randomizeRNG()//added in Revision 1.01 to fix key-pair duplication
+    q = generatePrime()
+    …  // rest of RSA generation code
+end
+
+Supondo que a randomização seja efetiva (ou seja, exclusiva para cada dispositivo), o que aconteceria após um "ataque de reinicialização(reset attack)" na nova versão? Isso é uma solução para o problema? Os valores do módulo, 
+n = p * q, foram coletados de dois dispositivos executando o firmware 1.01 após um "reset attack" e são dados em rsa_n1.txt e rsa_n2.txt.
+Complete o esqueleto da rsa.py com sua solução para factorizar os módulos, isto é, obter p1, q1 e p2, q2. (Dica: use a função number.GCD() – maior inteiro positivo que divide 2 números)
+
+Questão 7.   Use os valores obtidos para reconstruir os pares de chaves RSA (use genRSAkey(p, q) da rsa.py) e descriptografe as mensagens na conversa rsa_conversation.txt. Contém 5 mensagens de ida e volta (key1(msg1) → key2(msg2) → key1(msg3) → etc).
+
+
+
+
+
+
+
 In the browser, access the address (the IP will be informed by the teacher):
 http://.../test_login.html
 1) Start a new packet capture on Wireshark. Enter a fictitious user and password 123456 on the page. Click the Submit button and wait for the answer page.
@@ -6,3 +97,65 @@ http://.../test_login.html
   a) Can you find the login and password information entered in the previous item?
   b) Is HTTP authentication secure? Why?
 3) Send your answers through the Quiz in Canvas.
+
+Wireshark Lab: NAT v7.0
+
+Supplement to Computer Networking: A Top-Down Approach, 7th ed., J.F. Kurose and K.W. Ross
+
+
+
+
+“Tell me and I forget. Show me and I remember. Involve me and I understand.” Chinese proverb
+
+© 2005-2016, J.F Kurose and K.W. Ross, All Rights Reserved	 
+
+
+
+In this lab, we’ll investigate the Secure Sockets Layer (SSL) protocol, focusing on the SSL records sent over a TCP connection. We’ll do so by analyzing a trace of the SSL records sent between your host and an e-commerce server. We’ll investigate the various SSL record types as well as the fields in the SSL messages.   You may want to review Section 8.6 in the text .
+
+ 
+
+1. Capturing packets in an SSL session
+
+The first step is to capture the packets in an SSL session. To do this, you should go to your favorite e-commerce site and begin the process of purchasing an item (but terminating before making the actual purpose!). After capturing the packets with Wireshark, you should set the filter so that it displays only the Ethernet frames that contain SSL records sent from and received by your host. (An SSL record is the same thing as an SSL message.) You should obtain something like screenshot on the previous page.
+
+If you have difficulty creating a trace, you should download the zip file http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces.zip and extract the ssl-ethereal-trace-1 packet trace. 
+
+2.  A look at the captured trace
+
+Your Wireshark GUI should be displaying only the Ethernet frames that have SSL records. It is important to keep in mind that an Ethernet frame may contain one or more SSL records. (This is very different from HTTP, for which each frame contains either one complete HTTP message or a portion of a HTTP message.) Also, an SSL record may not completely fit into an Ethernet frame, in which case multiple frames will be needed to carry the record.
+Whenever possible, when answering a question below, you should hand in a printout of the packet(s) within the trace that you used to answer the question asked.  Annotate the printout  to explain your answer. To print a packet, use File->Print, choose Selected packet only, choose Packet summary line, and select the minimum amount of packet detail that you need to answer the question
+
+
+1.	For each of the first 8 Ethernet frames, specify the source of the frame (client or server), determine the number of SSL records that are included in the frame, and list the SSL record types that are included in the frame. Draw a timing diagram between client and server, with one arrow for each SSL record. 
+2.	Each of the SSL records begins with the same three fields (with possibly different values). One of these fields is “content type” and has length of one byte. List all three fields and their lengths. 
+
+ClientHello Record:
+
+3.	Expand the ClientHello record. (If your trace contains multiple ClientHello records, expand the frame that contains the first one.) What is the value of the content type?
+4.	Does the ClientHello record contain a nonce (also known as a “challenge”)? If so, what is the value of the challenge in hexadecimal notation?
+5.	Does the ClientHello record advertise the cyber suites it supports? If so, in the first listed suite, what are the public-key algorithm, the symmetric-key algorithm, and the hash algorithm?
+
+ServerHello Record:
+
+6.	Locate the ServerHello SSL record. Does this record specify a chosen cipher suite? What are the algorithms in the chosen cipher suite?
+7.	Does this record include a nonce? If so, how long is it? What is the purpose of the client and server nonces in SSL?
+8.	Does this record include a session ID? What is the purpose of the session ID?
+9.	Does this record contain a certificate, or is the certificate included in a separate record. Does the certificate fit into a single Ethernet frame?
+
+Client Key Exchange Record:
+
+10.	Locate the client key exchange record. Does this record contain a pre-master secret? What is this secret used for? Is the secret encrypted? If so, how? How long is the encrypted secret?
+
+Change Cipher Spec Record (sent by client) and Encrypted Handshake Record: 
+
+11.	What is the purpose of the Change Cipher Spec record? How many bytes is the record in your trace? 
+12.	In the encrypted handshake record, what is being encrypted? How?
+13.	Does the server also send a change cipher record and an encrypted handshake record to the client? How are those records different from those sent by the client?
+
+Application Data
+
+14.	How is the application data being encrypted? Do the records containing application data include a MAC? Does Wireshark distinguish between the encrypted application data and the MAC? 
+15.	Comment on and explain anything else that you found interesting in the trace. 
+
+
