@@ -6,7 +6,7 @@ A cryptographic hash function (https://en.wikipedia.org/wiki/Cryptographic_hash_
 4. No collisions: Given the size difference between the input and output two different messages can produce a collision, but finding such a collision should be computationally unfeasible.
 
 ### Question 1: Practice the validity of these properties in the SHA256 algorithm. 
-For this you can use the website https://anders.com/blockchain/hash . In that page you have a text block where you may write text and see the value returned by the SHA256 function when applied to that text.
+In this exercise you can use the website https://anders.com/blockchain/hash . In that page you have a text block where you may write text and see the value returned by the SHA256 function when applied to that text.
 Write a text inside the text block and see how the string below changes. Also note that the hash output in this function is always 256 bits long.
 
 ### MD5: RFC 1321: The MD5 message-digest algorithm
@@ -14,27 +14,75 @@ The algorithm takes as input a message of arbitrary length and produces as 128-b
 In this lab we will be using the MD5, SHA and SHA256 algorithms implemented in the Python Cryptography Toolkit (Package Crypto): collection of cryptographic modules that implement various functions and algorithms.
 Documentation: https://pypi.python.org/pypi/pycrypto/2.6. Python: http://docs.python-guide.org/en/latest/scenarios/crypto/
 
-Verify that the output size is consistent with what is expected according to the algorithm (see the documentation). Repeat the procedure for a sentence generated with get_sentence (). (Note that the output is hexadecimal)
+Questão 3: (Rainbow Tables) 
+Questão 4: Tente usar o CrackStation.net ou o HashKiller.co.uk para reverter os hashes dos passwords:
 
-Questão 3: (Rainbow Tables) Inspecione o arquivo dump_22_11_2013.db e tente determinar, consultando esta tabela:
+'mattThorne','6655fcfadca4adff9933c07842161c65f993c9bd','7ab9495396df849963e683d724f85086',632),
+'l1l_m3rm@id','201b8f20dd1695d7d46e80a23f0487d1cb91e255','88b4ce63d49305ffd3570c7c24c0c5b0',470),
+'undertaker91','460b8dde3c375c9f9b87e3ab44ffce3fa1305744','66ce76c7795eb6325705fb6efe0afc1d',101),
+'paul.dicey','97ea5599536ab294f94a47c4194c2c6d488d2725','90f441eed2c426e09ae41eb53095623e',642)
+'admin','fa0754b9861f7065fd7c6270efb07fc6ac3b0ad8','5e815814b6c62056f25078ef388f1b53',987)
+Comprove seus resultados na questão anterior.
+
+Inspecione o arquivo dump_22_11_2013.db e tente determinar, consultando esta tabela:
 função de hash – tamanho da saída
-	MD5        --         128 bits
-	SHA	     -- 	      160 bits
-	SHA256  -- 	       256 bits
+	MD5     --    128 bits
+	SHA	--    160 bits
+	SHA256  --    256 bits
 qual função Hash foi usada dentre MD5, SHA e SHA256. 
 
 Tente reverter os hashes dos secrets no arquivo  dump_22_11_2013.db. (Dica: use força bruta e o dict/words como dicionário)
-Agora tente reverter os hashes dos passwords. Conseguiu? Precisa acrescentar o salt! Nesse caso, os salts são representações de inteiros como strings. Use o campo length para determinar qual função hash foi utilizada. Então, compute os passwords  por força bruta usando o salt correspondente e o dicionário dict/words do arquivo. 
+Agora tente reverter os hashes dos passwords. 
+
+'mattThorne','6655fcfadca4adff9933c07842161c65f993c9bd','7ab9495396df849963e683d724f85086',632),
+'l1l_m3rm@id','201b8f20dd1695d7d46e80a23f0487d1cb91e255','88b4ce63d49305ffd3570c7c24c0c5b0',470),
+'undertaker91','460b8dde3c375c9f9b87e3ab44ffce3fa1305744','66ce76c7795eb6325705fb6efe0afc1d',101),
+'paul.dicey','97ea5599536ab294f94a47c4194c2c6d488d2725','90f441eed2c426e09ae41eb53095623e',642)
+'admin','fa0754b9861f7065fd7c6270efb07fc6ac3b0ad8','5e815814b6c62056f25078ef388f1b53',987)
+
+Conseguiu? Precisa acrescentar o salt! Nesse caso, os salts são representações de inteiros como strings. Use o campo length para determinar qual função hash foi utilizada. Então, compute os passwords  por força bruta usando o salt correspondente e o dicionário dict/words do arquivo. 
 
  Uma forma de evitar tabelas pré-computadas é utilizar o mecanismo de
 salting. Uma das características dos algoritmos de hashing é que eles são numericamente instáveis: uma pequena mudança na entrada gera uma
 mudança drástica na saída. No salting se adiciona uma string (salt)
 como prefixo da mensagem antes de computar o hash. 
 
-Questão 4: Tente usar o CrackStation.net ou o HashKiller.co.uk para reverter os hashes dos passwords e os secrets no arquivo  dump_22_11_2013.db. Comprove seus resultados na questão anterior.
+
 
 Funções hash funcionam bem para aplicações de autenticação porque são unidirecionais, tornando a mensagem ininteligível. Para  aplicações bidirecionais (como troca de mensagens) em que é  desejável recuperar a mensagem em seu formato original, são comumente usados algoritmos de criptografia – ou ciphers. A criptografia é utilizada para evitar que o conteúdo de mensagens interceptadas durante uma comunicação possa ser entendido por entidades não autorizadas. Para isso, as duas entidades envolvidas na comunicação usam informações adicionais (chaves) que permitem  criptografar e descriptografar mensagens. Algoritmos de criptografia podem ser simétricos, nos quais a chave de criptografia
 é igual a de descriptografia, ou assimétricos caso contrário. Em algoritmos block-level, as mensagens são processadas em blocos, enquanto em algoritmos stream,   as operações são feitas byte a byte. 
+
+
+
+
+
+Question 3: (Rainbow Tables)
+Question 4: Try using CrackStation.net or HashKiller.co.uk to reverse passwords hashes and secrets in the dump_22_11_2013.db file. Check your results in the previous question.
+
+Inspect the dump_22_11_2013.db file and try to determine by referring to this table:
+hash function - output size
+MD5 - 128 bits
+SHA - 160 bits
+SHA256 - 256 bits
+which hash function was used from MD5, SHA and SHA256.
+
+Try reversing the secrets hashes in the dump_22_11_2013.db file. (Hint: use brute force and dict / words as dictionary)
+Now try reversing the hashes of passwords. Got? Need to add the salt! In this case, salts are representations of integers as strings. Use the length field to determine which hash function was used. Then compute the brute force passwords using the corresponding salt and dict / words dictionary from the file.
+
+ One way to avoid precomputed tables is to use the mechanism of
+salting One of the characteristics of hashing algorithms is that they are numerically unstable: a small change in input generates a
+drastic change in output. In salting a string (salt) is added
+prefix the message before computing the hash.
+
+
+
+Hash functions work well for authentication applications because they are unidirectional, making the message unintelligible. For bidirectional applications (such as message exchange) where it is desirable to retrieve the message in its original format, encryption algorithms - or ciphers - are commonly used. Encryption is used to prevent the content of messages intercepted during a communication from being understood by unauthorized entities. For this, the two entities involved in the communication use additional information (keys) that allow to encrypt and decrypt messages. Encryption algorithms can be symmetric, where the encryption key
+equals decryption, or asymmetric otherwise. In block-level algorithms, messages are processed in blocks, while in stream algorithms, operations are done byte by byte.
+
+
+
+
+
 
 Algoritmos De Criptografia Simétrica
 Questão 5: xor.py é um exemplo de utilização de um algoritmo de criptografia simétrica que utiliza a cifra XOR  (stream cipher, https://pt.wikipedia.org/wiki/Cifra_de_fluxo): a mensagem é processada aplicando uma operação XOR a cada caractere da mensagem com o caractere correspondente da chave. A criptografia nesse caso é simêtrica: a chave que criptografa a mensagem é a mesma que irá a descriptografar. As propriedades de simetria e de auto-inversão são satisfeitas: a XOR b = b XOR a.
