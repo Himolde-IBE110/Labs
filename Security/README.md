@@ -99,6 +99,8 @@ https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt
 # Secure Layer over HTTP
 ![Difference http vs https](./infographic-https.jpg =50x20). (taken from https://www.globalsign.com/en/blog/the-difference-between-http-and-https/)
 
+<img src="infographic-https.jpg" alt="drawing" width="200"/>
+
 In the browser, access the page:
 http://my-static-test01.herokuapp.com/form.html
 
