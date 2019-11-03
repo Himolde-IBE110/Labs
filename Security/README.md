@@ -1,4 +1,4 @@
-## Security:
+## Cryptographic hash functions:
 A cryptographic hash function (https://en.wikipedia.org/wiki/Cryptographic_hash_function) maps an arbitrarily sized (message) entry to a string of fixed length bits, called a hash digest or digest. An ideal cryptographic hash function should be:
 1. unidirectional: it is impossible to retrieve a message given a hash, unless all possible messages are tested;
 2. deterministic: the same input always generates the same output;
@@ -14,17 +14,14 @@ The algorithm takes as input a message of arbitrary length and produces as 128-b
 In this lab we will be using the MD5, SHA and SHA256 algorithms implemented in the Python Cryptography Toolkit (Package Crypto): collection of cryptographic modules that implement various functions and algorithms.
 Documentation: https://pypi.python.org/pypi/pycrypto/2.6. Python: http://docs.python-guide.org/en/latest/scenarios/crypto/
 
-
-Question 4: Try using CrackStation.net or HashKiller.co.uk to reverse passwords hashes and secrets in the dump_22_11_2013.db file. Check your results in the previous question.
-
-Inspect and try to determine by referring to this table:
+### Question 2: Reversig hashes
+Try using CrackStation.net or HashKiller.co.uk to reverse the next secret hashes. Inspect and verify that the size of the output is correct by  referring to this table:
 hash function - output size
 MD5 - 128 bits
 SHA - 160 bits
 SHA256 - 256 bits
-which hash function was used from MD5, SHA and SHA256.
+whether the hash function was MD5, SHA or SHA256.
 
-Try using CrackStation.net or HashKiller.co.uk to reverse the secrets hashes: 
 ```
 6655fcfadca4adff9933c07842161c65f993c9bd
 201b8f20dd1695d7d46e80a23f0487d1cb91e255
@@ -47,8 +44,34 @@ One way to avoid precomputed tables is to use the mechanism of salting. One of t
 drastic change in output. In salting a string (salt) is added
 prefix the message before computing the hash.
 
-Hash functions work well for authentication applications because they are unidirectional, making the message unintelligible. For bidirectional applications (such as message exchange) where it is desirable to retrieve the message in its original format, encryption algorithms - or ciphers - are commonly used. Encryption is used to prevent the content of messages intercepted during a communication from being understood by unauthorized entities. For this, the two entities involved in the communication use additional information (keys) that allow to encrypt and decrypt messages. Encryption algorithms can be symmetric, where the encryption key
-equals decryption, or asymmetric otherwise. In block-level algorithms, messages are processed in blocks, while in stream algorithms, operations are done byte by byte.
+## Encryption
+Hash functions work well for authentication applications because they are unidirectional, making the message unintelligible. For bidirectional applications (such as message exchange) where it is desirable to retrieve the message in its original format, encryption algorithms - or ciphers - are commonly used. Encryption is used to prevent the content of messages intercepted during a communication from being understood by unauthorized entities. For this, the two entities involved in the communication use additional information (keys) that allow to encrypt and decrypt messages. Encryption algorithms can be **symmetric**, where the encryption and decryption keys are the same, or asymmetric otherwise. In block-level algorithms, messages are processed in blocks, while in stream algorithms, operations are done byte by byte.
+
+(From https://en.wikipedia.org/wiki/XOR_cipher#Example_implementation)
+This is its XOR function table:
+
+a | b | a ⊕ b
+--|---|------
+0 | 0 | 0
+0 | 1 | 1
+1 | 0 | 1
+1 | 1 | 0
+
+where ⊕ denotes the exclusive disjunction (XOR) operation. This operand will compare two bits and will produce one bit in return.
+
+In cryptography, the simple XOR cipher is a type of additive cipher, an encryption algorithm that operates according to the principles:
+```
+    A ⊕ 0 = A,
+    A ⊕ A = 0,
+    (A ⊕  B) ⊕ C = A ⊕ (B ⊕ C),
+    (B ⊕ A) ⊕ A = B ⊕ 0 = B,
+```
+With this logic, a string of text can be encrypted by applying the bitwise XOR operator to every character using a given key. To decrypt the output, merely reapplying the XOR function with the key will remove the cipher.
+When the key is smaller than the input, you reapply it until you reach the end of input. 
+XOR cracking is often based on frequency analysis. 
+
+### Exercise 3: Calculate the xor
+Open the site http://xor.pw/# . Test the properties of the XOR cipher by encrypting a text and decrypting the output. In particular, verify this: (B ⊕ A) ⊕ A = B ⊕ 0 = B
 
 
 
