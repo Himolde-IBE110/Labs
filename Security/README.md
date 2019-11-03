@@ -86,7 +86,7 @@ XOR cracking is often based on frequency analysis.
 Open the site http://xor.pw/# . Test the properties of the XOR cipher by encrypting a text and decrypting the output. In particular, verify that: (B ⊕ A) ⊕ A = B ⊕ 0 = B
 
 ## Assimetric cryptography
-The RSA algorithm is an asymmetric encryption algorithm. Also called public-key encryption, uses two separate keys: one **public** to encrypt and one **private** to decrypt. Anyone in possession of the public key can encrypt a message that only the proven private key owner can read. RSA was the first algorithm that demonstrated this concept. Its security assumptions are based on complexity theory: calculating the product of two prime numbers is easy (polynomial time), but there is no efficient algorithm for factoring them back.
+The RSA algorithm is an asymmetric encryption algorithm. Also called public-key encryption, uses two separate keys: one **public** to encrypt and one **private** to decrypt. Anyone in possession of the public key can encrypt a message that only the proven private key owner can read. RSA was the first algorithm that demonstrated this concept. Its security assumptions are based on complexity theory: calculating the product of two prime numbers is easy (polynomial time), but there is no efficient algorithm for factoring them back.You can  Choose diferent sizes for your keys (the longer, the safer) as you can see here: https://8gwifi.org/rsafunctions.jsp but remember that the assimetric cryptography is computationally demanding, thus your encryption/decryptio will be much slower with longer keys. 
 
 ### Exercise 4: RSA encryption
 Enter the site:
@@ -96,14 +96,8 @@ Generate a pair of keys and use them to encrypt and decrypt a message. Verify th
 See more about encryption here:
 https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/rsa-encryption-part-4
 
-
-
-
-
-
-
-
-
+# Secure Layer over HTTP
+![Difference http vs https](./infographic-https.jpg) (taken from https://www.globalsign.com/en/blog/the-difference-between-http-and-https/)
 
 In the browser, access the address (the IP will be informed by the teacher):
 http://.../test_login.html
@@ -113,16 +107,13 @@ http://.../test_login.html
   b) Is HTTP authentication secure? Why?
 3) Send your answers through the Quiz in Canvas.
 
-Wireshark Lab: NAT v7.0
+## Wireshark Lab: SSL
 
 Supplement to Computer Networking: A Top-Down Approach, 7th ed., J.F. Kurose and K.W. Ross
 © 2005-2016, J.F Kurose and K.W. Ross, All Rights Reserved	 
 
-
-
 In this lab, we’ll investigate the Secure Sockets Layer (SSL) protocol, focusing on the SSL records sent over a TCP connection. We’ll do so by analyzing a trace of the SSL records sent between your host and an e-commerce server. We’ll investigate the various SSL record types as well as the fields in the SSL messages.   You may want to review Section 8.6 in the text .
 
- 
 ![Capturing packets in an SSL Session](./SSLSession.png)
 1. Capturing packets in an SSL session
 
