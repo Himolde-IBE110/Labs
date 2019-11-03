@@ -14,7 +14,7 @@ The algorithm takes as input a message of arbitrary length and produces as 128-b
 In this lab we will be using the MD5, SHA and SHA256 algorithms implemented in the Python Cryptography Toolkit (Package Crypto): collection of cryptographic modules that implement various functions and algorithms.
 Documentation: https://pypi.python.org/pypi/pycrypto/2.6. Python: http://docs.python-guide.org/en/latest/scenarios/crypto/
 
-### Question 2: Reversig hashes
+### Question 2: Reversing hashes
 Try using CrackStation.net or HashKiller.co.uk to reverse the next secret hashes. Inspect and verify that the size of the output is correct by  referring to this table:
 
 hash function | output size
