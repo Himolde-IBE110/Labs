@@ -99,8 +99,10 @@ https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt
 # Secure Layer over HTTP
 What you should know to understand this part of the lab? 
 * What is a POST method: https://www.w3schools.com/tags/ref_httpmethods.asp
-* Difference between HTTP and HTTPS
-<img src="infographic-https.jpg" alt="Difference http vs https" width="55%"/> (taken from https://www.globalsign.com/en/blog/the-difference-between-http-and-https/)
+* Difference between HTTP and HTTPS 
+
+<img src="infographic-https.jpg" alt="Difference http vs https" width="55%"/> 
+(taken from https://www.globalsign.com/en/blog/the-difference-between-http-and-https/)
 
 ### Exercise: HTTP-based authentication. 
 In the browser, access the page:
@@ -113,22 +115,20 @@ Click on the line **POST /answer.php HTTP/1.1**. In the middle screen, click **�
   b) Is HTTP authentication secure? Why?
 
 ## Wireshark Lab: SSL
-
 Supplement to Computer Networking: A Top-Down Approach, 7th ed., J.F. Kurose and K.W. Ross
 © 2005-2016, J.F Kurose and K.W. Ross, All Rights Reserved	 
 
-In this lab, we’ll investigate the Secure Sockets Layer (SSL) protocol, focusing on the SSL records sent over a TCP connection. We’ll do so by analyzing a trace of the SSL records sent between your host and an e-commerce server. We’ll investigate the various SSL record types as well as the fields in the SSL messages.   You may want to review Section 8.6 in the text (available [here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=8&cad=rja&uact=8&ved=2ahUKEwjfipPQgs7lAhWFxcQBHVbZD6QQFjAHegQICBAC&url=http%3A%2F%2Fce.sharif.edu%2Fcourses%2F94-95%2F2%2Fce443-3%2Fresources%2Froot%2FBook%2Ffqo47.Computer.Networking.A.TopDown.Approach.6th.Edition.pdf&usg=AOvVaw1_FFqF_DWRt9aDVZ_C8AT-)).
+In this lab, we’ll investigate the Secure Sockets Layer (SSL) protocol, focusing on the SSL records sent over a TCP connection. We’ll do so by analyzing a trace of the SSL records sent between your host and an a server. We’ll investigate the various SSL record types as well as the fields in the SSL messages.   You may want to review Section 8.6 in the text (available [here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=8&cad=rja&uact=8&ved=2ahUKEwjfipPQgs7lAhWFxcQBHVbZD6QQFjAHegQICBAC&url=http%3A%2F%2Fce.sharif.edu%2Fcourses%2F94-95%2F2%2Fce443-3%2Fresources%2Froot%2FBook%2Ffqo47.Computer.Networking.A.TopDown.Approach.6th.Edition.pdf&usg=AOvVaw1_FFqF_DWRt9aDVZ_C8AT-)).
 
 ![Capturing packets in an SSL Session](./SSLSession.png)
+
 1. Capturing packets in an SSL session
 
-The first step is to capture the packets in an SSL session. To do this, you should go to your favorite e-commerce site and begin the process of purchasing an item (but terminating before making the actual purpose!). After capturing the packets with Wireshark, you should set the filter so that it displays only the Ethernet frames that contain SSL records sent from and received by your host. (An SSL record is the same thing as an SSL message.) You should obtain something like screenshot on the previous page.
+The first step is to capture the packets in an SSL session. To do this, you should go to a site that uses HTTPS (look for the lock!, ex. Wikipedia) and navigate for some time in the site. After capturing the packets with Wireshark, you should set the filter so that it displays only the Ethernet frames that contain SSL records sent from and received by your host. (An SSL record is the same thing as an SSL message.) You should obtain something like screenshot on the previous page.
 
 2.  A look at the captured trace
 
 Your Wireshark GUI should be displaying only the Ethernet frames that have SSL records. It is important to keep in mind that an Ethernet frame may contain one or more SSL records. (This is very different from HTTP, for which each frame contains either one complete HTTP message or a portion of a HTTP message.) Also, an SSL record may not completely fit into an Ethernet frame, in which case multiple frames will be needed to carry the record.
-
-Whenever possible, when answering a question below, you should hand in a printout of the packet(s) within the trace that you used to answer the question asked.  Annotate the printout  to explain your answer. To print a packet, use File->Print, choose Selected packet only, choose Packet summary line, and select the minimum amount of packet detail that you need to answer the question
 
 1.	For each of the first 8 Ethernet frames, specify the source of the frame (client or server), determine the number of SSL records that are included in the frame, and list the SSL record types that are included in the frame. Draw a timing diagram between client and server, with one arrow for each SSL record. 
 2.	Each of the SSL records begins with the same three fields (with possibly different values). One of these fields is “content type” and has length of one byte. List all three fields and their lengths. 
