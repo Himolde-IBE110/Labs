@@ -105,7 +105,7 @@ http://my-static-test01.herokuapp.com/form.html
 
 1) Start a new packet capture on Wireshark. Enter a fictitious user and password on the page. Click the Submit button and wait for the answer page.
 2) Stop packet capture. **You have sent username and password data through the HTTP POST packet!!**. 
-Click on this the line **POST /answer.php HTTP/1.1**. In the middle screen, click **⊳ HTML Form URL Encoded** to expand the information. Observe:
+Click on the line **POST /answer.php HTTP/1.1**. In the middle screen, click **⊳ HTML Form URL Encoded** to expand the information. Observe:
   a) Can you find the login and password information entered in the previous item?
   b) Is HTTP authentication secure? Why?
 
