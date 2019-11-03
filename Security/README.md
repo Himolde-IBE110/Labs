@@ -124,27 +124,27 @@ In this lab, we’ll investigate the Secure Sockets Layer (SSL) protocol, focusi
 
 1. Capturing packets in an SSL session
 
-The first step is to capture the packets in an SSL session. To do this, you should go to a site that uses HTTPS (look for the lock!, ex. Wikipedia) and navigate for some time in the site. After capturing the packets with Wireshark, you should set the filter so that it displays only the Ethernet frames that contain SSL records sent from and received by your host. (An SSL record is the same thing as an SSL message.) You should obtain something like screenshot on the previous page.
+The first step is to capture the packets in an SSL session. To do this, you should go to a site that uses HTTPS (look for the lock!, ex. an e-commerce site that you use or any site that uses TLS/SSL where you have a login). Login and navigate for some time in the site. After capturing the packets with Wireshark, you should set the filter so that it displays only the Ethernet frames that contain SSL records sent from and received by your host. (An SSL record is the same thing as an SSL message.) You should obtain something like screenshot on the previous page.
 
 2.  A look at the captured trace
 
 Your Wireshark GUI should be displaying only the Ethernet frames that have SSL records. It is important to keep in mind that an Ethernet frame may contain one or more SSL records. (This is very different from HTTP, for which each frame contains either one complete HTTP message or a portion of a HTTP message.) Also, an SSL record may not completely fit into an Ethernet frame, in which case multiple frames will be needed to carry the record.
 
-1.	Look for a ClientHello Record. Starting there, for each of the first  8 Ethernet frames displayed, specify the source of the frame (client or server), determine the number of SSL records that are included in the frame, and list the SSL record types that are included in the frame. Draw a timing diagram between client and server, with one arrow for each SSL record. 
-<!--2.	Each of the SSL records begins with the same three fields (with possibly different values). One of these fields is “content type” and has length of one byte. List all three fields and their lengths. -->
+1.	Look for a ClientHello Record. Starting there, for each of the first  8 Ethernet frames displayed, specify the source of the frame (client or server), determine the number of SSL records that are included in the frame, and list the SSL record types that are included in the frame with the value of the "content type" field. Draw a timing diagram between client and server, with one arrow for each SSL record. 
 
 ClientHello Record:
 
-3.	Expand the ClientHello record. (If your trace contains multiple ClientHello records, expand the frame that contains the first one.) What is the value of the content type?
-4.	Does the ClientHello record contain a nonce (also known as a “challenge”)? If so, what is the value of the challenge in hexadecimal notation?
-5.	Does the ClientHello record advertise the cipher suites it supports? If so, pick one of the listed suites, and identify the public-key algorithm, the symmetric-key algorithm, and the hash algorithm.
+2.	Expand the ClientHello record. (If your trace contains multiple ClientHello records, expand the frame that contains the first one.) What is the value of the content type?
+<!--3.	Does the ClientHello record contain a nonce (also known as a “challenge”)? If so, what is the value of the challenge in hexadecimal notation?-->
+3.	Does the ClientHello record advertise the cipher suites it supports? If so, pick one of the listed suites, and identify the public-key algorithm, the symmetric-key algorithm, and the hash algorithm.
 
 ServerHello Record:
 
-6.	Locate the ServerHello SSL record. Does this record specify a chosen cipher suite? What are the algorithms in the chosen cipher suite?
-7.	Does this record contain a certificate, or is the certificate included in a separate record? What was the encryption used for the signature of the certificate? (Look for it inside the TLS/SSL record)
+4.	Locate the ServerHello SSL record: Does this record specify a chosen cipher suite? What are the algorithms in the chosen cipher suite?
+5.	Does this record contain a certificate, or is the certificate included in a separate record? What was the encryption used for the signature of the certificate? (Look for it inside the TLS/SSL record)
 
-8. After the Client Key Exchange Record is sent, the Application Data messages are sent open or encrypted? What do you think is the encryption used from now on?
+6. After the Client Key Exchange Record is sent, the Application Data messages are sent open or encrypted? What do you think is the encryption scheme used from now on? 
+7. Is it possible to read the login and password you have entered in the site?
 
 <!--
 Client Key Exchange Record:
@@ -158,5 +158,15 @@ Change Cipher Spec Record (sent by client) and Encrypted Handshake Record:
 14.	How is the application data being encrypted? Do the records containing application data include a MAC? Does Wireshark distinguish between the encrypted application data and the MAC? 
 15.	Comment on and explain anything else that you found interesting in the trace. 
 -->
+Note: https://security.stackexchange.com/questions/3664/ssl-replay-attack-when-client-server-random-is-missing?rq=1
+
+## SQL Injection attack
+https://xkcd.com/327/
+
+Follow the steps in https://sqlzoo.net/hack/
+
+https://www.w3resource.com/sql/sql-injection/sql-injection.php
+
+https://portswigger.net/web-security/sql-injection
 
 
