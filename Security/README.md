@@ -30,7 +30,20 @@ whether the hash function was MD5, SHA or SHA256.
 fa0754b9861f7065fd7c6270efb07fc6ac3b0ad8
 ```
 (Hint: they use brute force and a dictionary)
+
+One way to avoid precomputed tables is to use the mechanism of salting. One of the characteristics of hashing algorithms is that they are numerically unstable: a small change in input generates a drastic change in output. In salting a string (salt) is added a prefix to the message before computing the hash.
+
 Now try reversing the hashes of passwords. 
+```
+7ab9495396df849963e683d724f85086
+88b4ce63d49305ffd3570c7c24c0c5b0
+66ce76c7795eb6325705fb6efe0afc1d
+90f441eed2c426e09ae41eb53095623e
+5e815814b6c62056f25078ef388f1b53
+```
+
+Did it work? Need to add the salt! In this case, salts are representations of integers as strings. 
+
 ```
 7ab9495396df849963e683d724f85086,632,
 88b4ce63d49305ffd3570c7c24c0c5b0,470,
@@ -38,11 +51,6 @@ Now try reversing the hashes of passwords.
 90f441eed2c426e09ae41eb53095623e,642,
 5e815814b6c62056f25078ef388f1b53,987
 ```
-Got it? Need to add the salt! In this case, salts are representations of integers as strings. Use the length field to determine which hash function was used. Then compute the brute force passwords using the corresponding salt and dict / words dictionary from the file.
-
-One way to avoid precomputed tables is to use the mechanism of salting. One of the characteristics of hashing algorithms is that they are numerically unstable: a small change in input generates a
-drastic change in output. In salting a string (salt) is added
-prefix the message before computing the hash.
 
 ## Encryption
 Hash functions work well for authentication applications because they are unidirectional, making the message unintelligible. For bidirectional applications (such as message exchange) where it is desirable to retrieve the message in its original format, encryption algorithms - or ciphers - are commonly used. Encryption is used to prevent the content of messages intercepted during a communication from being understood by unauthorized entities. For this, the two entities involved in the communication use additional information (keys) that allow to encrypt and decrypt messages. Encryption algorithms can be **symmetric**, where the encryption and decryption keys are the same, or asymmetric otherwise. In block-level algorithms, messages are processed in blocks, while in stream algorithms, operations are done byte by byte.
@@ -59,35 +67,21 @@ a | b | a ⊕ b
 
 where ⊕ denotes the exclusive disjunction (XOR) operation. This operand will compare two bits and will produce one bit in return.
 
-In cryptography, the simple XOR cipher is a type of additive cipher, an encryption algorithm that operates according to the principles:
+In cryptography, the simple XOR cipher is a type of additive cipher, an **encryption algorithm** that operates according to the principles:
 ```
     A ⊕ 0 = A,
     A ⊕ A = 0,
     (A ⊕  B) ⊕ C = A ⊕ (B ⊕ C),
     (B ⊕ A) ⊕ A = B ⊕ 0 = B,
 ```
-With this logic, a string of text can be encrypted by applying the bitwise XOR operator to every character using a given key. To decrypt the output, merely reapplying the XOR function with the key will remove the cipher.
+With this logic, a string of text can be encrypted by applying the bitwise XOR operator to every character using a given key. To decrypt the output, merely reapply the XOR function with the key to remove the cipher.
 When the key is smaller than the input, you reapply it until you reach the end of input. 
 XOR cracking is often based on frequency analysis. 
 
-### Exercise 3: Calculate the xor
+### Exercise 3: Calculate XOR encryption
 Open the site http://xor.pw/# . Test the properties of the XOR cipher by encrypting a text and decrypting the output. In particular, verify this: (B ⊕ A) ⊕ A = B ⊕ 0 = B
 
 
-
-
-
-
-
-Conseguiu? Precisa acrescentar o salt! Nesse caso, os salts são representações de inteiros como strings. Use o campo length para determinar qual função hash foi utilizada. Então, compute os passwords  por força bruta usando o salt correspondente e o dicionário dict/words do arquivo. 
-
- Uma forma de evitar tabelas pré-computadas é utilizar o mecanismo de
-salting. Uma das características dos algoritmos de hashing é que eles são numericamente instáveis: uma pequena mudança na entrada gera uma
-mudança drástica na saída. No salting se adiciona uma string (salt)
-como prefixo da mensagem antes de computar o hash. 
-
-Funções hash funcionam bem para aplicações de autenticação porque são unidirecionais, tornando a mensagem ininteligível. Para  aplicações bidirecionais (como troca de mensagens) em que é  desejável recuperar a mensagem em seu formato original, são comumente usados algoritmos de criptografia – ou ciphers. A criptografia é utilizada para evitar que o conteúdo de mensagens interceptadas durante uma comunicação possa ser entendido por entidades não autorizadas. Para isso, as duas entidades envolvidas na comunicação usam informações adicionais (chaves) que permitem  criptografar e descriptografar mensagens. Algoritmos de criptografia podem ser simétricos, nos quais a chave de criptografia
-é igual a de descriptografia, ou assimétricos caso contrário. Em algoritmos block-level, as mensagens são processadas em blocos, enquanto em algoritmos stream,   as operações são feitas byte a byte. 
 
 
 Algoritmos De Criptografia Simétrica
