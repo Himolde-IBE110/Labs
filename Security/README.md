@@ -99,13 +99,14 @@ https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt
 # Secure Layer over HTTP
 ![Difference http vs https](./infographic-https.jpg) (taken from https://www.globalsign.com/en/blog/the-difference-between-http-and-https/)
 
-In the browser, access the address (the IP will be informed by the teacher):
-http://.../test_login.html
-1) Start a new packet capture on Wireshark. Enter a fictitious user and password 123456 on the page. Click the Submit button and wait for the answer page.
-2) Stop packet capture. **You have sent username and password data through the HTTP POST packet**. Click on this line. In the middle screen, click ⊳ to expand the information. Answer:
+In the browser, access the page:
+http://my-static-test01.herokuapp.com/form.html
+
+1) Start a new packet capture on Wireshark. Enter a fictitious user and password on the page. Click the Submit button and wait for the answer page.
+2) Stop packet capture. **You have sent username and password data through the HTTP POST packet!!**. 
+Click on this the line **POST /answer.php HTTP/1.1**. In the middle screen, click **⊳ HTML Form URL Encoded** to expand the information. Observe:
   a) Can you find the login and password information entered in the previous item?
   b) Is HTTP authentication secure? Why?
-3) Send your answers through the Quiz in Canvas.
 
 ## Wireshark Lab: SSL
 
@@ -124,7 +125,6 @@ The first step is to capture the packets in an SSL session. To do this, you shou
 Your Wireshark GUI should be displaying only the Ethernet frames that have SSL records. It is important to keep in mind that an Ethernet frame may contain one or more SSL records. (This is very different from HTTP, for which each frame contains either one complete HTTP message or a portion of a HTTP message.) Also, an SSL record may not completely fit into an Ethernet frame, in which case multiple frames will be needed to carry the record.
 
 Whenever possible, when answering a question below, you should hand in a printout of the packet(s) within the trace that you used to answer the question asked.  Annotate the printout  to explain your answer. To print a packet, use File->Print, choose Selected packet only, choose Packet summary line, and select the minimum amount of packet detail that you need to answer the question
-
 
 1.	For each of the first 8 Ethernet frames, specify the source of the frame (client or server), determine the number of SSL records that are included in the frame, and list the SSL record types that are included in the frame. Draw a timing diagram between client and server, with one arrow for each SSL record. 
 2.	Each of the SSL records begins with the same three fields (with possibly different values). One of these fields is “content type” and has length of one byte. List all three fields and their lengths. 
