@@ -16,11 +16,13 @@ Documentation: https://pypi.python.org/pypi/pycrypto/2.6. Python: http://docs.py
 
 ### Question 2: Reversig hashes
 Try using CrackStation.net or HashKiller.co.uk to reverse the next secret hashes. Inspect and verify that the size of the output is correct by  referring to this table:
+
 hash function | output size
---|--
-MD5 | 128 bits
-SHA | 160 bits
-SHA256 | 256 bits
+--------------|------------
+MD5           | 128 bits
+SHA           | 160 bits
+SHA256        | 256 bits
+
 whether the hash function was MD5, SHA or SHA256.
 
 ```
@@ -83,12 +85,16 @@ XOR cracking is often based on frequency analysis.
 ### Exercise 3: Calculate XOR encryption
 Open the site http://xor.pw/# . Test the properties of the XOR cipher by encrypting a text and decrypting the output. In particular, verify this: (B ⊕ A) ⊕ A = B ⊕ 0 = B
 
+## Assimetric cryptography
+The RSA algorithm is an asymmetric encryption algorithm. Also called public-key encryption, uses two separate keys: one **public** to encrypt and one **private** to decrypt. Anyone in possession of the public key can encrypt a message that only the proven private key owner can read. RSA was the first algorithm that demonstrated this concept. Its security assumptions are based on complexity theory: calculating the product of two prime numbers is easy (polynomial time), but there is no efficient algorithm for factoring them back.
 
-O algoritmo RSA é um algoritmo de criptografia assimétrica. A também chamada de criptografia de chave pública usa duas chaves separadas:  uma pública para criptografar e uma privada para  descriptografar. Qualquer um em posse da chave pública pode criptografar uma mensagem que somente o dono da chave provada pode ler. RSA foi o primeiro algoritmo que demonstrou esse conceito. Os seus pressupostos de segurança baseiam-se na teoria da complexidade: calcular o produto de dois números primos é fácil (tempo polinomial), mas não existe um algoritmo eficiente para fatorá-los de volta (até agora, todos os métodos de factorização estão na classe não polinomial).
-As chaves para o algoritmo RSA são geradas da seguinte maneira:
+### Exercise 3: Calculate XOR encryption
+Enter the site:
+http://cobweb.cs.uga.edu/~dme/csci6300/Encryption/Crypto.html
+Generate a pair of keys and use them to encrypt and decrypt a message.
 
-
-https://pt.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/rsa-encryption-part-4
+See more about encryption here:
+https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/rsa-encryption-part-4
 
 
 
