@@ -82,16 +82,16 @@ With this logic, a string of text can be encrypted by applying the bitwise XOR o
 When the key is smaller than the input, you reapply it until you reach the end of input. 
 XOR cracking is often based on frequency analysis. 
 
-### Exercise 3: Calculate XOR encryption
-Open the site http://xor.pw/# . Test the properties of the XOR cipher by encrypting a text and decrypting the output. In particular, verify this: (B ⊕ A) ⊕ A = B ⊕ 0 = B
+### Exercise 3: XOR encryption
+Open the site http://xor.pw/# . Test the properties of the XOR cipher by encrypting a text and decrypting the output. In particular, verify that: (B ⊕ A) ⊕ A = B ⊕ 0 = B
 
 ## Assimetric cryptography
 The RSA algorithm is an asymmetric encryption algorithm. Also called public-key encryption, uses two separate keys: one **public** to encrypt and one **private** to decrypt. Anyone in possession of the public key can encrypt a message that only the proven private key owner can read. RSA was the first algorithm that demonstrated this concept. Its security assumptions are based on complexity theory: calculating the product of two prime numbers is easy (polynomial time), but there is no efficient algorithm for factoring them back.
 
-### Exercise 3: Calculate XOR encryption
+### Exercise 4: RSA encryption
 Enter the site:
 http://cobweb.cs.uga.edu/~dme/csci6300/Encryption/Crypto.html
-Generate a pair of keys and use them to encrypt and decrypt a message.
+Generate a pair of keys and use them to encrypt and decrypt a message. Verify that a message encrypted with a public key can only be decrypted with its private key, and viceversa.
 
 See more about encryption here:
 https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/rsa-encryption-part-4
@@ -116,12 +116,6 @@ http://.../test_login.html
 Wireshark Lab: NAT v7.0
 
 Supplement to Computer Networking: A Top-Down Approach, 7th ed., J.F. Kurose and K.W. Ross
-
-
-
-
-“Tell me and I forget. Show me and I remember. Involve me and I understand.” Chinese proverb
-
 © 2005-2016, J.F Kurose and K.W. Ross, All Rights Reserved	 
 
 
@@ -129,16 +123,15 @@ Supplement to Computer Networking: A Top-Down Approach, 7th ed., J.F. Kurose and
 In this lab, we’ll investigate the Secure Sockets Layer (SSL) protocol, focusing on the SSL records sent over a TCP connection. We’ll do so by analyzing a trace of the SSL records sent between your host and an e-commerce server. We’ll investigate the various SSL record types as well as the fields in the SSL messages.   You may want to review Section 8.6 in the text .
 
  
-
+![Capturing packets in an SSL Session](./SSLSession.png)
 1. Capturing packets in an SSL session
 
 The first step is to capture the packets in an SSL session. To do this, you should go to your favorite e-commerce site and begin the process of purchasing an item (but terminating before making the actual purpose!). After capturing the packets with Wireshark, you should set the filter so that it displays only the Ethernet frames that contain SSL records sent from and received by your host. (An SSL record is the same thing as an SSL message.) You should obtain something like screenshot on the previous page.
 
-If you have difficulty creating a trace, you should download the zip file http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces.zip and extract the ssl-ethereal-trace-1 packet trace. 
-
 2.  A look at the captured trace
 
 Your Wireshark GUI should be displaying only the Ethernet frames that have SSL records. It is important to keep in mind that an Ethernet frame may contain one or more SSL records. (This is very different from HTTP, for which each frame contains either one complete HTTP message or a portion of a HTTP message.) Also, an SSL record may not completely fit into an Ethernet frame, in which case multiple frames will be needed to carry the record.
+
 Whenever possible, when answering a question below, you should hand in a printout of the packet(s) within the trace that you used to answer the question asked.  Annotate the printout  to explain your answer. To print a packet, use File->Print, choose Selected packet only, choose Packet summary line, and select the minimum amount of packet detail that you need to answer the question
 
 
