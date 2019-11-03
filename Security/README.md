@@ -97,7 +97,7 @@ See more about encryption here:
 https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/rsa-encryption-part-4
 
 # Secure Layer over HTTP
-![Difference http vs https](./infographic-https.jpg=50x20). (taken from https://www.globalsign.com/en/blog/the-difference-between-http-and-https/)
+![Difference http vs https](./infographic-https.jpg =50x20). (taken from https://www.globalsign.com/en/blog/the-difference-between-http-and-https/)
 
 In the browser, access the page:
 http://my-static-test01.herokuapp.com/form.html
