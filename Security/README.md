@@ -97,9 +97,12 @@ See more about encryption here:
 https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/rsa-encryption-part-4
 
 # Secure Layer over HTTP
+What you should know to understand this part of the lab? 
+* What is a POST method: https://www.w3schools.com/tags/ref_httpmethods.asp
+* Difference between HTTP and HTTPS
+<img src="infographic-https.jpg" alt="Difference http vs https" width="55%"/> (taken from https://www.globalsign.com/en/blog/the-difference-between-http-and-https/)
 
-<img src="infographic-https.jpg" alt="Difference http vs https" width="60%"/> (taken from https://www.globalsign.com/en/blog/the-difference-between-http-and-https/)
-
+### Exercise: HTTP-based authentication. 
 In the browser, access the page:
 http://my-static-test01.herokuapp.com/form.html
 
