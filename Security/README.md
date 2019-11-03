@@ -16,10 +16,11 @@ Documentation: https://pypi.python.org/pypi/pycrypto/2.6. Python: http://docs.py
 
 ### Question 2: Reversig hashes
 Try using CrackStation.net or HashKiller.co.uk to reverse the next secret hashes. Inspect and verify that the size of the output is correct by  referring to this table:
-hash function - output size
-MD5 - 128 bits
-SHA - 160 bits
-SHA256 - 256 bits
+hash function | output size
+--|--
+MD5 | 128 bits
+SHA | 160 bits
+SHA256 | 256 bits
 whether the hash function was MD5, SHA or SHA256.
 
 ```
@@ -31,9 +32,7 @@ fa0754b9861f7065fd7c6270efb07fc6ac3b0ad8
 ```
 (Hint: they use brute force and a dictionary)
 
-One way to avoid precomputed tables is to use the mechanism of salting. One of the characteristics of hashing algorithms is that they are numerically unstable: a small change in input generates a drastic change in output. In salting a string (salt) is added a prefix to the message before computing the hash.
-
-Now try reversing the hashes of passwords. 
+Now try reversing the hashes of passwords here: https://crackstation.net/. 
 ```
 7ab9495396df849963e683d724f85086
 88b4ce63d49305ffd3570c7c24c0c5b0
@@ -42,18 +41,21 @@ Now try reversing the hashes of passwords.
 5e815814b6c62056f25078ef388f1b53
 ```
 
-Did it work? Need to add the salt! In this case, salts are representations of integers as strings. 
+Did it work? Need to add the **salt**! 
+One way to avoid precomputed tables is to use the mechanism of salting. One of the characteristics of hashing algorithms is that they are numerically unstable: a small change in input generates a drastic change in output. In salting a string (salt) is added a prefix to the message before computing the hash. In this case, salts are representations of integers as strings. 
+The site HashKiller.co.uk have collected passwords since 2007. What they do is just look for the password in a table they have built. 
+Try again to reverse the hashes using the site HashKiller.co.uk, and verify that the salt correspondent to each of the following passwords is as follows:
 
 ```
-7ab9495396df849963e683d724f85086,632,
-88b4ce63d49305ffd3570c7c24c0c5b0,470,
-66ce76c7795eb6325705fb6efe0afc1d,101,
-90f441eed2c426e09ae41eb53095623e,642,
+7ab9495396df849963e683d724f85086,632
+88b4ce63d49305ffd3570c7c24c0c5b0,470
+66ce76c7795eb6325705fb6efe0afc1d,101
+90f441eed2c426e09ae41eb53095623e,642
 5e815814b6c62056f25078ef388f1b53,987
 ```
 
 ## Encryption
-Hash functions work well for authentication applications because they are unidirectional, making the message unintelligible. For bidirectional applications (such as message exchange) where it is desirable to retrieve the message in its original format, encryption algorithms - or ciphers - are commonly used. Encryption is used to prevent the content of messages intercepted during a communication from being understood by unauthorized entities. For this, the two entities involved in the communication use additional information (keys) that allow to encrypt and decrypt messages. Encryption algorithms can be **symmetric**, where the encryption and decryption keys are the same, or asymmetric otherwise. In block-level algorithms, messages are processed in blocks, while in stream algorithms, operations are done byte by byte.
+Hash functions work well for authentication applications because they are unidirectional, making the message unintelligible. For bidirectional applications (such as message exchange) where it is desirable to retrieve the message in its original format, encryption algorithms - or **ciphers** - are commonly used. Encryption is used to prevent the content of messages intercepted during a communication from being understood by unauthorized entities. To this end, the two entities involved in the communication use additional information (keys) that allow to encrypt and decrypt messages. Encryption algorithms can be **symmetric**, where the encryption and decryption keys are the same, or asymmetric otherwise. In block-level algorithms, messages are processed in blocks, while in stream algorithms, operations are done byte by byte.
 
 (From https://en.wikipedia.org/wiki/XOR_cipher#Example_implementation)
 This is its XOR function table:
@@ -82,18 +84,11 @@ XOR cracking is often based on frequency analysis.
 Open the site http://xor.pw/# . Test the properties of the XOR cipher by encrypting a text and decrypting the output. In particular, verify this: (B ⊕ A) ⊕ A = B ⊕ 0 = B
 
 
-
-
-Algoritmos De Criptografia Simétrica
-Questão 5: xor.py é um exemplo de utilização de um algoritmo de criptografia simétrica que utiliza a cifra XOR  (stream cipher, https://pt.wikipedia.org/wiki/Cifra_de_fluxo): a mensagem é processada aplicando uma operação XOR a cada caractere da mensagem com o caractere correspondente da chave. A criptografia nesse caso é simêtrica: a chave que criptografa a mensagem é a mesma que irá a descriptografar. As propriedades de simetria e de auto-inversão são satisfeitas: a XOR b = b XOR a.
-Analise o código em xor.py e determine o quê acontece se a mensagem for maior que a chave. Então, observe os primeiros 3 bytes da mensagem criptografada de exemplo. Você pode explicar este comportamento?
-Finalmente, use as propriedades do XOR para recuperar a mensagem. 
-
 O algoritmo RSA é um algoritmo de criptografia assimétrica. A também chamada de criptografia de chave pública usa duas chaves separadas:  uma pública para criptografar e uma privada para  descriptografar. Qualquer um em posse da chave pública pode criptografar uma mensagem que somente o dono da chave provada pode ler. RSA foi o primeiro algoritmo que demonstrou esse conceito. Os seus pressupostos de segurança baseiam-se na teoria da complexidade: calcular o produto de dois números primos é fácil (tempo polinomial), mas não existe um algoritmo eficiente para fatorá-los de volta (até agora, todos os métodos de factorização estão na classe não polinomial).
 As chaves para o algoritmo RSA são geradas da seguinte maneira:
 
 
-https://pt.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/rsa-encryption-part-4)
+https://pt.khanacademy.org/computing/computer-science/cryptography/modern-crypt/v/rsa-encryption-part-4
 
 
 
