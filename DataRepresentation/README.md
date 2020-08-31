@@ -12,4 +12,7 @@
 You are encouraged to use the tasks to explore the menu items and tools available in the software. If you erase the sound file by mistake you can just restore it. 
   - Open the timer2 file.
      - Drag and drop the timer2.mp3 file into Audacity 
+     
+  Follow the steps here:
+     https://www.digitaltechnologieshub.edu.au/docs/default-source/Lesson-Ideas/everything-is-numbers/sampling_sound.pdf?sfvrsn=5
 
