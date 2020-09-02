@@ -4,6 +4,17 @@
 
 * Binary
   - https://www.csfieldguide.org.nz/en/interactives/dot-combinations/
+  
+* Floating point
+  - Go to the site
+  Execute this Python code, verify that the command:
+print ((1e20 + -1e20) + 3.14)
+  outputs  3.14, but
+print (1e20 + (-1e20 + 3.14))
+  outputs 0.0
+  
+Why is that? Because -1e20 is a very large number to represent, 3.14 will be ignored in the sum. 
+
 * Images
   - https://www.csfieldguide.org.nz/en/chapters/data-representation/images-and-colours/
 * Audio 
