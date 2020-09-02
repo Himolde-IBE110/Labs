@@ -6,8 +6,8 @@
   - https://www.csfieldguide.org.nz/en/interactives/dot-combinations/
   
 * Floating point
-  - Go to the site
-  Execute this Python code, verify that the command:
+  - Go to the site https://www.python.org/shell/
+  Execute this Python code in the shell, verify that the command:
 print ((1e20 + -1e20) + 3.14)
   outputs  3.14, but
 print (1e20 + (-1e20 + 3.14))
