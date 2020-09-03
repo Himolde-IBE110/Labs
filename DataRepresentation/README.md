@@ -23,9 +23,12 @@ Why is that? Because -1e20 is a very large number to represent, 3.14 will be ign
   - You can experiment with sound to better understand its properties here: http://www.scootle.edu.au/ec/viewing/L1301/index.html (needs Flash)
   - Step 1: Install Audacity. Audacity was chosen is a free open source digital audio editor and recording application and is available for different operating systems such as Windows, OS X and Linux flavors. Audacity can record audio from multiple sources and can be used for audio post-processing.
 You are encouraged to use the tasks to explore the menu items and tools available in the software. If you erase the sound file by mistake you can just restore it. 
-  - Open the timer2 file.
-     - Drag and drop the timer2.mp3 file into Audacity 
-     
-  Follow the steps here:
-     https://www.digitaltechnologieshub.edu.au/docs/default-source/Lesson-Ideas/everything-is-numbers/sampling_sound.pdf?sfvrsn=5
+Follow the activities here:
+  https://computingfanmiddle.wordpress.com/2019/11/05/sound-editing-task-1/
 
+     
+  For more fun, follow the steps here:
+     https://steemit.com/utopian-io/@buckydurddle/audacity-tutorial-activity-1-and-2-first-recording-and-pitch-shift-sound-like-a-chipmunk
+
+<!--      https://www.digitaltechnologieshub.edu.au/docs/default-source/Lesson-Ideas/everything-is-numbers/sampling_sound.pdf?sfvrsn=5
+-->
