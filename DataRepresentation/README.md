@@ -9,10 +9,15 @@
 * Floating point
   - Go to the site https://www.python.org/shell/
   - Execute this Python code in the shell, verify that the command:
+    
 print ((1e20 + -1e20) + 3.14)
   outputs  3.14, but
 print (1e20 + (-1e20 + 3.14))
   outputs 0.0
+  
+  Go to this page. Explain: when the computer might report an "overflow error"?  
+  - https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:digital-information/xcae6f4a7ff015e7d:limitations-of-storing-numbers/a/number-limits-overflow-and-roundoff
+
   
 Why is that? Because -1e20 is a very large number to represent, 3.14 will be ignored in the sum. 
 
