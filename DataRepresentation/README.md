@@ -23,6 +23,7 @@ Why is that? Because -1e20 is a very large number to represent, 3.14 will be ign
 
 * Images
   - https://www.csfieldguide.org.nz/en/chapters/data-representation/images-and-colours/
+  - Extra exercise: have some spare time: try this! https://www.youtube.com/watch?v=nWUZGzaPmHk
   
 * Audio 
   - You can experiment with sound to better understand its properties here: http://www.scootle.edu.au/ec/viewing/L1301/index.html (needs Flash)
