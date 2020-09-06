@@ -12,9 +12,9 @@
     
 ```python    
 print ((1e20 + -1e20) + 3.14)
-  outputs  3.14, but
+  # outputs  3.14, but
 print (1e20 + (-1e20 + 3.14))
-  outputs 0.0
+  # outputs 0.0
 ```
 
   Go to this page. Explain: when the computer might report an "overflow error"?  
