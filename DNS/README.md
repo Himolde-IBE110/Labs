@@ -231,7 +231,7 @@ Do an *nslookup* on www.mit.edu
 ·
 Stop packet capture.
 
-* ![You should get a trace that looks something like this](Pictures/trace)*
+* ![You should get a trace that looks something like this](Pictures/trace.png)*
 
 We see from the above screenshot that *nslookup*
 actually sent three DNS queries and received three DNS responses. For the
