@@ -175,8 +175,8 @@ Answer the following questions[[5]](#_ftn5) :
 
 Now repeat the previous experiment, but instead issue the command:
 
-nslookup
-www.aiit.or.kr bitsy.mit.edu
+nslookup www.aiit.or.kr bitsy.mit.edu
+(remember to change bitsy.mit.edu by a nameserver inside your network)
 
 Answer the following questions[[6]](#_ftn6):
 
