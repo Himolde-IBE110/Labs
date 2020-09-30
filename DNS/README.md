@@ -43,6 +43,29 @@ Now finally consider the third command:
 
 nslookup www.aiit.or.kr bitsy.mit.edu
 
+Note from lecturer: That command will not work outside mit. You will see this error instead:
+```
+DNS request timed out.
+    timeout was 2 seconds.
+Server:  UnKnown
+Address:  18.0.72.3
+
+DNS request timed out.
+    timeout was 2 seconds.
+DNS request timed out.
+    timeout was 2 seconds.
+DNS request timed out.
+    timeout was 2 seconds.
+DNS request timed out.
+    timeout was 2 seconds.
+*** Request to UnKnown timed-out
+```
+because the packets sent will likely be filtered. Instead, you can use a server inside the university (if you are outside you can connect to the VPN). To find a suitable server execute:
+```
+nslookup -type=NS yourdomain
+``` 
+then use that server instead of bitsy.mit.edu
+ 
 In this example, we indicate that we want to the query sent to the DNS server bitsy.mit.edu rather than to the default DNS server (dns-prime.poly.edu). Thus, the query and reply transaction takes place directly between our querying host and bitsy.mit.edu. In this example, the DNS server bitsy.mit.edu provides the IP address of the host www.aiit.or.kr, which is a web server at the Advanced Institute of Information Technology (in Korea).
 
 Now that we have gone through a few illustrative examples, you are perhaps wondering about the general syntax of *nslookup* commands. 
