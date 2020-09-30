@@ -184,8 +184,27 @@ Answer the following questions[[6]](#_ftn6):
     to?
 21. Examine the DNS query message. What “Type” of DNS query is it? Does the query message contain any “answers”?
 22. Examine the DNS response message. How many “answers” are provided? What does each of these answers contain?
-23. Provide a screenshot.
 
+
+Authoritative answers:
+Compare the next resolutions, and comclude what means an answer to be authoritative:
+```
+>nslookup hyse.himolde.no
+Server:  hork.himolde.no
+Address:  158.38.95.10
+
+Name:    hyse.himolde.no
+Address:  158.38.68.12
+
+>nslookup maps.google.com
+Server:  hork.himolde.no
+Address:  158.38.95.10
+
+Non-authoritative answer:
+Name:    maps.google.com
+Addresses:  2a00:1450:400f:80a::200e
+          172.217.21.174
+```
 ---
 
 [[1]](#_ftnref1)
