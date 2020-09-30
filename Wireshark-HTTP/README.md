@@ -150,3 +150,7 @@ Your browser should display a short HTML file with two images. These two images 
   2. To know the address of your computer, you can run: {Windows: ipconfig, Mac, Linux: ifconfig) 
   3. To resolve the address of the remote computer, use the DNS service as we studied in class. Call the program 
       nslookup nameoftheserver (gaia.cs.umass.edu) and verify that the address returned is the same that appears in Wireshark.
+      
+      
+  Now you should be able to answer the questions here: http://gaia.cs.umass.edu/kurose_ross/interactive/http-get.php
+  
