@@ -6,7 +6,7 @@ Lab exercises in Networks.
 
 Wireshark Lab: DNS v8.0. Supplement to *Computer Networking: A Top-Down Approach, 8th ed.,* J.F. Kurose and K.W. Ross
 
-Note: When this lab was written the MIT was running their own DNS servers. Now they have moved to servers in akamai, that's why you will see different servers than here. Just used the ones you get as an answer when you run nslookup.
+__Note: When this lab was written the MIT was running their own DNS servers. Now they have moved to servers in akamai, that's why you will see different servers than here. Just used the ones you get as an answer when you run nslookup.__
 
 The Domain Name System (DNS) translates hostnames to IP addresses, fulfilling a critical role in the Internet infrastructure. In this lab, we'll take a closer
 look at the client side of DNS. The client's role in the DNS is relatively simple – a client sends a *query* to its local DNS server, and receives a *response* back.  As shown in Figures 2.19 and 2.20 in the textbook, much can go on “under the covers,” invisible to the DNS clients, as the hierarchical DNS servers communicate with each other to either recursively or iteratively resolve the client’s DNS query.  From the DNS client’s standpoint, however, the protocol is quite simple – a query is formulated to the local DNS server and a response is received from that server.
