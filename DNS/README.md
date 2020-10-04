@@ -66,7 +66,7 @@ because the packets sent will likely be filtered. Instead, you can use a server 
 ```
 nslookup -type=NS yourdomain
 ``` 
-in a MAC type:
+in a Mac type:
 
 nslookup -query=NS himolde.no
 
