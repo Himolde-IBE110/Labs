@@ -4,7 +4,7 @@ Lab exercises in Networks.
 ### Simple Mail Transfer Protocol -- SMTP
 SMTP is a network protocol used for transferring email messages to servers. The server should be listening at port 25. In order to send an email message you should follow the next steps (based on https://docs.microsoft.com/en-us/exchange/mail-flow/test-smtp-with-telnet?view=exchserver-2019#step-3-use-telnet-on-port-25-to-test-smtp-communication):
 
-** In Windows you can either use the telnet program available in git-bash or install a telnet client as explained in the previous link. **
+__In Windows you can either use the telnet program available in git-bash or install a telnet client as explained in the previous link.__
 
 * Step 1: Install the Telnet Client on your computer
   - Windows 10: Telnet is available, you just need to enable it. 
