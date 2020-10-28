@@ -45,8 +45,8 @@ Now try reversing the hashes of passwords here: https://crackstation.net/.
 
 Did it work? Need to add the **salt**! 
 One way to avoid precomputed tables is to use the mechanism of salting. One of the characteristics of hashing algorithms is that they are numerically unstable: a small change in input generates a drastic change in output. In salting a string (salt) is added a prefix to the message before computing the hash. In this case, salts are representations of integers as strings. 
-The site HashKiller.co.uk have collected passwords since 2007. What they do is just look for the password in a table they have built. 
-Try again to reverse the hashes using the site HashKiller.co.uk, and verify that the salt correspondent to each of the following passwords is as follows:
+The site HashKiller.co.uk (now changed to hashkiller.io) have collected passwords since 2007. What they do is just look for the password in a table they have built. 
+Try again to reverse the hashes using the site https://hashes.com/en/decrypt/hash, and verify that the salt correspondent to each of the following passwords is as follows:
 
 ```
 7ab9495396df849963e683d724f85086,632
