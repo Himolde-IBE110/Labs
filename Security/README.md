@@ -163,10 +163,13 @@ Note: https://security.stackexchange.com/questions/3664/ssl-replay-attack-when-c
 ## SQL Injection attack
 https://xkcd.com/327/
 
-Follow the steps in https://sqlzoo.net/hack/
+Follow the steps in https://www.guru99.com/learn-sql-injection-with-practical-example.html
 
 https://www.w3resource.com/sql/sql-injection/sql-injection.php
 
 https://portswigger.net/web-security/sql-injection
+
+https://owasp.org/www-community/attacks/SQL_Injection
+
 
 
