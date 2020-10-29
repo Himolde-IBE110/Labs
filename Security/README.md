@@ -15,7 +15,7 @@ In this lab we will be using the MD5, SHA and SHA256 algorithms implemented in t
 Documentation: https://pypi.python.org/pypi/pycrypto/2.6. Python: http://docs.python-guide.org/en/latest/scenarios/crypto/
 
 ### Question 2: Reversing hashes
-Try using CrackStation.net or HashKiller.co.uk to reverse the next secret hashes. Inspect and verify that the size of the output is correct by  referring to this table:
+Try using CrackStation.net to reverse the next secret hashes. Inspect and verify that the size of the output is correct by  referring to this table:
 
 hash function | output size
 --------------|------------
@@ -45,7 +45,7 @@ Now try reversing the hashes of passwords here: https://crackstation.net/.
 
 Did it work? Need to add the **salt**! 
 One way to avoid precomputed tables is to use the mechanism of salting. One of the characteristics of hashing algorithms is that they are numerically unstable: a small change in input generates a drastic change in output. In salting a string (salt) is added a prefix to the message before computing the hash. In this case, salts are representations of integers as strings. 
-The site HashKiller.co.uk (now changed to hashkiller.io) have collected passwords since 2007. What they do is just look for the password in a table they have built. 
+The site HashKiller.co.uk (now moved to hashkiller.io) have collected passwords since 2007. What they do is just look for the password in a table they have built. 
 Try again to reverse the hashes using the site https://hashes.com/en/decrypt/hash, and verify that the salt correspondent to each of the following passwords is as follows:
 
 ```
